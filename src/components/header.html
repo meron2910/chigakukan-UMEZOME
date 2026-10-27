@@ -1,0 +1,46 @@
+<!-- ================================================================
+     UMEZOME - 共通ヘッダーコンポーネント
+     ファイル: src/components/header.html
+     
+     【説明】
+     全ページで共通して使われるヘッダー（ナビゲーション）です。
+     JavaScript (Fetch API) によって、各ページの
+     <div id="site-header-placeholder"></div>
+     の中に自動的に読み込まれます。
+
+     【どこからどこまでがヘッダーか】
+     ↓↓↓ ここからヘッダーのHTML本体 ↓↓↓
+================================================================ -->
+<header class="site-header" id="site-header">
+  <div class="header-inner">
+
+    <!-- ロゴ（トップページへのリンク） -->
+    <a href="index.html" class="site-logo" id="header-logo" aria-label="トップページへ">
+      <span class="site-logo__en">UMEZOME</span>
+      <span class="site-logo__ja">智学館中等教育学校 梅染め探究 PBL</span>
+    </a>
+
+    <!-- ハンバーガーボタン (スマートフォン・タブレット用) -->
+    <button class="nav-hamburger" id="nav-hamburger"
+            aria-label="メニューを開閉する" aria-expanded="false"
+            aria-controls="nav-menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- ナビゲーションメニュー (リンク一覧) -->
+    <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="メインナビゲーション">
+      <a href="src/pages/about.html"        class="nav-menu__link" data-page="about">活動概要</a>
+      <a href="src/pages/news.html"         class="nav-menu__link" data-page="news">ニュース</a>
+      <a href="src/pages/events.html"       class="nav-menu__link" data-page="events">イベント</a>
+      <a href="src/pages/blog.html"         class="nav-menu__link" data-page="blog">ブログ</a>
+      <a href="src/pages/products.html"     class="nav-menu__link" data-page="products">製品</a>
+      <a href="src/pages/achievements.html" class="nav-menu__link" data-page="achievements">実績</a>
+      <a href="src/pages/documents.html"    class="nav-menu__link" data-page="documents">資料</a>
+      <a href="index.html#contact"          class="nav-cta nav-menu__link" data-page="contact">お問い合わせ</a>
+    </nav>
+
+  </div>
+</header>
+<!-- ↑↑↑ ここまでヘッダーのHTML本体 ↑↑↑ ============================ -->

@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<!--
+================================================================
+  UMEZOME - ブログ一覧ページ
+  ファイル: src/pages/blog.html
+  【ブログ追加方法】
+    .card を1つコピーして内容を編集してください
+================================================================
+-->
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ブログ | UMEZOME - 智学館中等教育学校 梅染め探究 PBL</title>
+  <meta name="description" content="智学館中等教育学校 梅染め探究PBLのブログ。活動記録・研究レポートを発信しています。">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✿</text></svg>">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- ================================================================
+       【共通ヘッダー読み込みエリア】
+       ここから ↓↓↓
+       ※ src/components/header.html が JavaScript (Fetch API) で自動挿入されます。
+       ※ デザインやリンクの修正は「src/components/header.html」を編集してください。
+       ※ 直接ダブルクリック(file://)した場合はセキュリティ制限で動作しません。
+          VS Codeの「Live Server」などのWebサーバー環境で開いてください。
+  ================================================================ -->
+  <div id="site-header-placeholder"></div>
+  <!-- ↑↑↑ ここまで【共通ヘッダー読み込みエリア】 ==================== -->
+
+
+<main id="main-content">
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="パンくずリスト">
+        <a href="../index.html">ホーム</a>
+        <span class="breadcrumb__separator" aria-hidden="true">›</span>
+        <span aria-current="page">ブログ</span>
+      </nav>
+      <p class="section-eyebrow">Blog</p>
+      <h1 class="page-header__title">ブログ</h1>
+      <p class="page-header__lead">活動の記録や研究の成果、日々の取り組みを発信しています。</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- カテゴリタグフィルター -->
+      <div class="tag-list mb-xl animate">
+        <span class="tag">全て</span>
+        <span class="tag">研究レポート</span>
+        <span class="tag">活動記録</span>
+        <span class="tag">製品開発</span>
+        <span class="tag">ワークショップ</span>
+      </div>
+
+      <!--
+        ブログ記事グリッド
+        【追加方法】
+          1. <article class="card"> を1つコピー
+          2. 写真: picture/ フォルダから選択して src を変更
+          3. タグ・日付・タイトル・本文を編集
+          4. .animate-delay-X で遅延を調整 (0〜5)
+      -->
+      <div class="grid-3">
+
+        <!-- 記事1 (フィーチャード) -->
+        <article class="card animate" style="grid-column: span 3; display: grid; grid-template-columns: 1fr 1fr; overflow: hidden">
+          <div class="card__image-wrapper" style="overflow:hidden">
+            <img src="../../picture/DSCPDC_0002_BURST20240804111341343_COVER.JPG"
+                 alt="5年間の梅染め探究"
+                 style="width:100%; height:100%; object-fit:cover; min-height:300px"
+                 loading="lazy">
+          </div>
+          <div class="card__body" style="display:flex; flex-direction:column; justify-content:center; padding: var(--space-2xl)">
+            <span class="card__tag">研究レポート</span>
+            <time class="card__date" datetime="2024-10-01">2024年10月1日</time>
+            <h2 class="card__title" style="font-size:var(--text-2xl)">
+              5年間の梅染め探究〜廃棄物からの地域の魅力創造〜
+            </h2>
+            <p class="card__text">
+              偕楽園の梅の木の剪定枝が大量に廃棄されていることを知り、その枝を梅の染料として活用する探究を始めて5年。
+              水酸化カリウム(KOH)を用いると発色が良好になることを発見し、
+              うちわ・コインケースなど多様な製品開発に成功しました。
+              地域の活性化と環境問題の解決を目指す取り組みをレポートします。
+            </p>
+            <a href="#" class="card__link">続きを読む →</a>
+          </div>
+        </article>
+
+        <!-- 記事2 -->
+        <article class="card animate">
+          <div class="card__image-wrapper">
+            <img src="../../picture/DSC_4276.JPG" alt="ワークショップの様子" class="card__image" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__tag">活動記録</span>
+            <time class="card__date" datetime="2024-09-20">2024年9月20日</time>
+            <h2 class="card__title">まちなかフェスティバル ワークショップレポート</h2>
+            <p class="card__text">地域の人々に梅染めの魅力を伝えたワークショップの詳細な記録です。</p>
+            <a href="#" class="card__link">読む →</a>
+          </div>
+        </article>
+
+        <!-- 記事3 -->
+        <article class="card animate animate-delay-1">
+          <div class="card__image-wrapper">
+            <img src="../../picture/1715059536199.jpg" alt="実験の様子" class="card__image" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__tag">研究</span>
+            <time class="card__date" datetime="2024-07-10">2024年7月10日</time>
+            <h2 class="card__title">染液の温度と発色の関係〜80℃の発見〜</h2>
+            <p class="card__text">温度管理が梅染めの品質を大きく左右することを実験で確認しました。最適温度は80℃です。</p>
+            <a href="#" class="card__link">読む →</a>
+          </div>
+        </article>
+
+        <!-- 記事4 -->
+        <article class="card animate animate-delay-2">
+          <div class="card__image-wrapper">
+            <img src="../../picture/1714727555766.jpg" alt="製品の様子" class="card__image" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__tag">製品開発</span>
+            <time class="card__date" datetime="2024-05-01">2024年5月1日</time>
+            <h2 class="card__title">梅染めコインケース誕生の裏側</h2>
+            <p class="card__text">うちわ作りで余った和紙を無駄にしない、エコなコインケースの開発ストーリー。</p>
+            <a href="#" class="card__link">読む →</a>
+          </div>
+        </article>
+
+        <!-- 記事5 -->
+        <article class="card animate">
+          <div class="card__image-wrapper">
+            <img src="../../picture/1714727555887.jpg" alt="活動の様子" class="card__image" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__tag">ワークショップ</span>
+            <time class="card__date" datetime="2023-11-03">2023年11月3日</time>
+            <h2 class="card__title">初めての水戸黄門まつり出展を振り返る</h2>
+            <p class="card__text">初めてお祭りで販売・ワークショップを開催した時の緊張と感動の記録。</p>
+            <a href="#" class="card__link">読む →</a>
+          </div>
+        </article>
+
+        <!-- 記事6 -->
+        <article class="card animate animate-delay-1">
+          <div class="card__image-wrapper">
+            <img src="../../picture/1715059547778.jpg" alt="偕楽園" class="card__image" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__tag">活動記録</span>
+            <time class="card__date" datetime="2023-06-01">2023年6月1日</time>
+            <h2 class="card__title">偕楽園から梅の枝をもらった日</h2>
+            <p class="card__text">梅染め探究の原点。偕楽園から初めて剪定枝を受け取った記念の日の記録です。</p>
+            <a href="#" class="card__link">読む →</a>
+          </div>
+        </article>
+
+      </div><!-- /grid-3 -->
+    </div>
+  </section>
+</main>
+
+  <!-- ================================================================
+       【共通フッター読み込みエリア】
+       ここから ↓↓↓
+       ※ src/components/footer.html が JavaScript (Fetch API) で自動挿入されます。
+       ※ デザインやリンクの修正は「src/components/footer.html」を編集してください。
+  ================================================================ -->
+  <div id="site-footer-placeholder"></div>
+  <!-- ↑↑↑ ここまで【共通フッター読み込みエリア】 ==================== -->
+
+  <button class="back-to-top" id="back-to-top" aria-label="ページトップへ戻る">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- JavaScriptファイルの読み込み -->
+  <!-- サイト全体の基本機能（アニメーション・スクロール等） -->
+  <script src="../assets/js/main.js"></script>
+  <!-- 共通ヘッダー・フッターの読み込み (Fetch API) -->
+  <script src="../assets/js/components.js"></script>
+</body>
+</html>

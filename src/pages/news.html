@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<!--
+================================================================
+  UMEZOME - ニュース一覧ページ
+  ファイル: src/pages/news.html
+  【ニュース追加方法】
+    .news-article を1つコピーして日付・タグ・タイトル・内容を編集
+================================================================
+-->
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ニュース | UMEZOME - 智学館中等教育学校 梅染め探究 PBL</title>
+  <meta name="description" content="智学館中等教育学校 梅染め探究PBLの最新ニュース・活動報告">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✿</text></svg>">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- ================================================================
+       【共通ヘッダー読み込みエリア】
+       ここから ↓↓↓
+       ※ src/components/header.html が JavaScript (Fetch API) で自動挿入されます。
+       ※ デザインやリンクの修正は「src/components/header.html」を編集してください。
+       ※ 直接ダブルクリック(file://)した場合はセキュリティ制限で動作しません。
+          VS Codeの「Live Server」などのWebサーバー環境で開いてください。
+  ================================================================ -->
+  <div id="site-header-placeholder"></div>
+  <!-- ↑↑↑ ここまで【共通ヘッダー読み込みエリア】 ==================== -->
+
+
+<main id="main-content">
+
+  <!-- ページヘッダー -->
+  <div class="page-header">
+    <div class="container">
+      <!-- パンくずリスト -->
+      <nav class="breadcrumb" aria-label="パンくずリスト">
+        <a href="../index.html">ホーム</a>
+        <span class="breadcrumb__separator" aria-hidden="true">›</span>
+        <span aria-current="page">ニュース</span>
+      </nav>
+      <p class="section-eyebrow">News</p>
+      <h1 class="page-header__title">ニュース</h1>
+      <p class="page-header__lead">梅染め探究プロジェクトの最新情報をお届けします。</p>
+    </div>
+  </div>
+
+  <!-- ニュース一覧 -->
+  <section class="section">
+    <div class="container">
+
+      <!-- フィルタータグ (カテゴリで絞り込み) -->
+      <div class="tag-list mb-xl animate">
+        <button class="tag" onclick="filterNews('all')" id="filter-all">全て</button>
+        <button class="tag" onclick="filterNews('event')">イベント</button>
+        <button class="tag" onclick="filterNews('award')">受賞</button>
+        <button class="tag" onclick="filterNews('activity')">活動</button>
+        <button class="tag" onclick="filterNews('volunteer')">ボランティア</button>
+      </div>
+
+      <!--
+        ニュース記事リスト
+        【追加方法】
+          1. 下の <article class="news-article"> を1つコピー
+          2. data-category に分類を入力 (event/award/activity/volunteer)
+          3. <time datetime="YYYY-MM-DD"> を更新
+          4. タイトルと本文を編集
+          5. 写真を追加する場合は <img src="../../picture/xxx.jpg"> を追加
+      -->
+      <div class="grid-2" id="news-list" style="gap: var(--space-xl)">
+
+        <!-- ニュース記事 1 -->
+        <article class="card animate" data-category="event">
+          <div class="card__body">
+            <span class="card__tag">イベント</span>
+            <time class="card__date" datetime="2024-11-03">2024年11月3日</time>
+            <h2 class="card__title">水戸黄門まつりで梅染めワークショップを開催</h2>
+            <p class="card__text">
+              水戸黄門まつりにて、梅染めうちわ・コインケース作りワークショップを開催しました。
+              地域の方々や観光客など多くの皆様にご参加いただき、梅染めの魅力をお伝えすることができました。
+              「美しい色合いに感動した」「スタッフの説明が丁寧で安心した」など嬉しいお声をいただきました。
+            </p>
+          </div>
+        </article>
+
+        <!-- ニュース記事 2 -->
+        <article class="card animate animate-delay-1" data-category="award">
+          <div class="card__body">
+            <span class="card__tag">受賞</span>
+            <time class="card__date" datetime="2024-10-15">2024年10月15日</time>
+            <h2 class="card__title">第16回ユネスコスクール全国大会にて発表</h2>
+            <p class="card__text">
+              全国のユネスコスクール生徒が集まる大会にて、梅染め探究の取り組みを発表しました。
+              偕楽園の廃棄枝を活用した環境・地域活性化の取り組みが注目を集めました。
+            </p>
+          </div>
+        </article>
+
+        <!-- ニュース記事 3 -->
+        <article class="card animate animate-delay-2" data-category="activity">
+          <div class="card__image-wrapper">
+            <img src="../../picture/1714727376145.jpg" alt="水戸まちなかフェスティバルの様子" class="card__image" loading="lazy">
+          </div>
+          <div class="card__body">
+            <span class="card__tag">活動</span>
+            <time class="card__date" datetime="2024-09-20">2024年9月20日</time>
+            <h2 class="card__title">水戸まちなかフェスティバルでワークショップ開催</h2>
+            <p class="card__text">
+              水戸まちなかフェスティバルにて梅染め体験ブースを出展しました。
+              「自然由来で魅力的」「中学生と交流できてとても楽しかった」など参加者から好評をいただきました。
+            </p>
+          </div>
+        </article>
+
+        <!-- ニュース記事 4 -->
+        <article class="card animate animate-delay-3" data-category="activity">
+          <div class="card__body">
+            <span class="card__tag">活動</span>
+            <time class="card__date" datetime="2024-06-05">2024年6月5日</time>
+            <h2 class="card__title">偕楽園から今年度の剪定枝を受け取り活動開始</h2>
+            <p class="card__text">
+              偕楽園より梅の剪定枝を受け取りました。
+              細かく砕いてチップに加工し、染液の抽出実験を開始しました。
+              今年度は新しい製品開発にも挑戦する予定です。
+            </p>
+          </div>
+        </article>
+
+        <!-- ニュース記事 5 -->
+        <article class="card animate" data-category="volunteer">
+          <div class="card__body">
+            <span class="card__tag">ボランティア</span>
+            <time class="card__date" datetime="2024-03-20">2024年3月20日</time>
+            <h2 class="card__title">老人ホームにてボランティア活動を実施</h2>
+            <p class="card__text">
+              地域の老人ホームにて梅染め体験ボランティアを実施しました。
+              入居者の方々に梅染めの楽しさをお伝えし、世代を超えた交流ができました。
+              また、偕楽園の梅染めアドバイザーとしての活動も継続しています。
+            </p>
+          </div>
+        </article>
+
+        <!-- ニュース記事 6 -->
+        <article class="card animate animate-delay-1" data-category="award">
+          <div class="card__body">
+            <span class="card__tag">受賞</span>
+            <time class="card__date" datetime="2024-02-01">2024年2月1日</time>
+            <h2 class="card__title">ボランティア・スピリット・アワードに応募</h2>
+            <p class="card__text">
+              プルデンシャル生命保険主催の「ボランティア・スピリット・アワード」に応募しました。
+              「水戸に梅染を広められるように、様々なイベントに参加しています」というタイトルで、
+              22名のグループ全員の活動を紹介しました。
+            </p>
+          </div>
+        </article>
+
+      </div><!-- /grid-2 -->
+    </div>
+  </section>
+
+</main>
+
+  <!-- ================================================================
+       【共通フッター読み込みエリア】
+       ここから ↓↓↓
+       ※ src/components/footer.html が JavaScript (Fetch API) で自動挿入されます。
+       ※ デザインやリンクの修正は「src/components/footer.html」を編集してください。
+  ================================================================ -->
+  <div id="site-footer-placeholder"></div>
+  <!-- ↑↑↑ ここまで【共通フッター読み込みエリア】 ==================== -->
+
+  <button class="back-to-top" id="back-to-top" aria-label="ページトップへ戻る">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- JavaScriptファイルの読み込み -->
+  <!-- サイト全体の基本機能（アニメーション・スクロール等） -->
+  <script src="../assets/js/main.js"></script>
+  <!-- 共通ヘッダー・フッターの読み込み (Fetch API) -->
+  <script src="../assets/js/components.js"></script>
+
+<script>
+/* ニュースフィルター機能 */
+function filterNews(category) {
+  const articles = document.querySelectorAll('#news-list [data-category]');
+  articles.forEach(article => {
+    if (category === 'all' || article.dataset.category === category) {
+      article.style.display = '';
+      article.classList.add('animate');
+      setTimeout(() => article.classList.add('animated'), 10);
+    } else {
+      article.style.display = 'none';
+    }
+  });
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!-- ================================================================
+     UMEZOME - 共通フッターコンポーネント
+     ファイル: src/components/footer.html
+     
+     【説明】
+     全ページで共通して使われるフッター部分です。
+     JavaScript (Fetch API) によって、各ページの
+     <div id="site-footer-placeholder"></div>
+     の中に自動的に読み込まれます。
+
+     【どこからどこまでがフッターか】
+     ↓↓↓ ここからフッターのHTML本体 ↓↓↓
+================================================================ -->
+<footer class="site-footer" id="site-footer">
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <!-- ブランド・ロゴ紹介 -->
+      <div class="footer-brand">
+        <a href="index.html" class="footer-logo site-logo" id="footer-logo" aria-label="トップページへ">
+          <span class="site-logo__en">UMEZOME</span>
+          <span class="site-logo__ja">智学館中等教育学校 梅染め探究 PBL</span>
+        </a>
+        <p class="footer-desc">
+          偕楽園の剪定梅枝を活用した梅染め探究プロジェクト。<br>
+          地域の自然と伝統を結び、持続可能な未来への学びを深めます。
+        </p>
+      </div>
+
+      <!-- サイトマップ1: 活動について -->
+      <nav class="footer-col" aria-label="活動について">
+        <h3 class="footer-col__title">活動について</h3>
+        <ul class="footer-col__links">
+          <li><a href="src/pages/about.html"  class="footer-col__link" data-page="about">活動概要</a></li>
+          <li><a href="src/pages/news.html"   class="footer-col__link" data-page="news">ニュース</a></li>
+          <li><a href="src/pages/events.html" class="footer-col__link" data-page="events">イベント</a></li>
+          <li><a href="src/pages/blog.html"   class="footer-col__link" data-page="blog">ブログ</a></li>
+        </ul>
+      </nav>
+
+      <!-- サイトマップ2: コンテンツ -->
+      <nav class="footer-col" aria-label="コンテンツ">
+        <h3 class="footer-col__title">コンテンツ</h3>
+        <ul class="footer-col__links">
+          <li><a href="src/pages/products.html"     class="footer-col__link" data-page="products">製品紹介</a></li>
+          <li><a href="src/pages/achievements.html" class="footer-col__link" data-page="achievements">実績・受賞</a></li>
+          <li><a href="src/pages/documents.html"    class="footer-col__link" data-page="documents">資料</a></li>
+          <li><a href="index.html#contact"          class="footer-col__link" data-page="contact">お問い合わせ</a></li>
+        </ul>
+      </nav>
+
+      <!-- 学校情報 -->
+      <div class="footer-col">
+        <h3 class="footer-col__title">学校情報</h3>
+        <ul class="footer-col__links">
+          <li><span class="footer-col__link">智学館中等教育学校</span></li>
+          <li><span class="footer-col__link">3年次 PBL 梅染め班</span></li>
+          <li><span class="footer-col__link">水戸市 茨城県</span></li>
+        </ul>
+      </div>
+
+    </div><!-- /footer-grid -->
+
+    <!-- フッター下部（コピーライト・サブリンク） -->
+    <div class="footer-bottom">
+      <p class="footer-copyright">
+        &copy; 2024 智学館中等教育学校 PBL梅染めグループ. All rights reserved.
+      </p>
+      <nav class="footer-links" aria-label="フッターリンク">
+        <a href="#">プライバシーポリシー</a>
+        <a href="index.html#contact" data-page="contact">お問い合わせ</a>
+      </nav>
+    </div>
+
+  </div>
+</footer>
+<!-- ↑↑↑ ここまでフッターのHTML本体 ↑↑↑ ============================ -->

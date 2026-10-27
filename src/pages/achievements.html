@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<!--
+================================================================
+  UMEZOME - 実績・受賞ページ
+  ファイル: src/pages/achievements.html
+  【実績追加方法】
+    .award-card を1つコピーして内容を編集してください
+================================================================
+-->
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>実績・受賞 | UMEZOME - 智学館中等教育学校 梅染め探究 PBL</title>
+  <meta name="description" content="智学館中等教育学校 梅染め探究PBLの実績・受賞歴。ユネスコスクール全国大会での発表など。">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✿</text></svg>">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- ================================================================
+       【共通ヘッダー読み込みエリア】
+       ここから ↓↓↓
+       ※ src/components/header.html が JavaScript (Fetch API) で自動挿入されます。
+       ※ デザインやリンクの修正は「src/components/header.html」を編集してください。
+       ※ 直接ダブルクリック(file://)した場合はセキュリティ制限で動作しません。
+          VS Codeの「Live Server」などのWebサーバー環境で開いてください。
+  ================================================================ -->
+  <div id="site-header-placeholder"></div>
+  <!-- ↑↑↑ ここまで【共通ヘッダー読み込みエリア】 ==================== -->
+
+
+<main id="main-content">
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="パンくずリスト">
+        <a href="../index.html">ホーム</a>
+        <span class="breadcrumb__separator" aria-hidden="true">›</span>
+        <span aria-current="page">実績・受賞</span>
+      </nav>
+      <p class="section-eyebrow">Achievements</p>
+      <h1 class="page-header__title">実績・受賞</h1>
+      <p class="page-header__lead">5年間の活動で積み上げてきた成果と受賞歴をご紹介します。</p>
+    </div>
+  </div>
+
+  <!-- 統計 (ダーク背景) -->
+  <section class="section section--dark">
+    <div class="container">
+      <div class="achievement-stats">
+        <div class="achievement-stat animate">
+          <div class="achievement-stat__number">5+</div>
+          <div class="achievement-stat__label">年間の活動実績</div>
+        </div>
+        <div class="achievement-stat animate animate-delay-1">
+          <div class="achievement-stat__number">22</div>
+          <div class="achievement-stat__label">PBLグループメンバー</div>
+        </div>
+        <div class="achievement-stat animate animate-delay-2">
+          <div class="achievement-stat__number">100+</div>
+          <div class="achievement-stat__label">ワークショップ参加者</div>
+        </div>
+        <div class="achievement-stat animate animate-delay-3">
+          <div class="achievement-stat__number">3+</div>
+          <div class="achievement-stat__label">主な発表・表彰</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 受賞・表彰一覧 -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header animate">
+        <span class="section-eyebrow">Awards</span>
+        <h2 class="section-title">受賞・発表歴</h2>
+      </div>
+
+      <!--
+        【受賞追加方法】
+          <div class="card animate"> ... </div> を1つコピーして内容を編集
+      -->
+      <div class="grid-2">
+
+        <div class="card animate">
+          <div class="card__body">
+            <span class="card__tag">2024年</span>
+            <h2 class="card__title">🏆 第16回ユネスコスクール全国大会 発表</h2>
+            <p class="card__text">
+              全国のユネスコスクール生徒が参加する大会にて、梅染め探究の取り組みを発表しました。
+              偕楽園の廃棄枝を活用した環境・地域活性化の取り組みが注目を集めました。
+            </p>
+          </div>
+        </div>
+
+        <div class="card animate animate-delay-1">
+          <div class="card__body">
+            <span class="card__tag">2023〜2024年</span>
+            <h2 class="card__title">🌟 ボランティア・スピリット・アワード 応募</h2>
+            <p class="card__text">
+              プルデンシャル生命保険主催のアワードに応募しました。
+              「水戸に梅染を広められるように、様々なイベントに参加しています」というタイトルで
+              22名のグループ活動を紹介しました。
+            </p>
+          </div>
+        </div>
+
+        <div class="card animate">
+          <div class="card__body">
+            <span class="card__tag">2024年</span>
+            <h2 class="card__title">🎯 PBL Day 2024 発表</h2>
+            <p class="card__text">
+              智学館中等教育学校のPBL Day 2024にて、3年次PBL梅染め班として活動成果を発表しました。
+              「世界には、もったいないがある。偕楽園にも、もったいないがある。」というメッセージで
+              活動を紹介しました。
+            </p>
+          </div>
+        </div>
+
+        <div class="card animate animate-delay-1">
+          <div class="card__body">
+            <span class="card__tag">2023年</span>
+            <h2 class="card__title">📊 PBL Day 2023 発表</h2>
+            <p class="card__text">
+              2023年度のPBL Dayにて前期・後期の2回発表を行いました。
+              五十嵐班・八木班・山崎班に分かれてそれぞれの取り組みを発表し、
+              探究の深化を示すことができました。
+            </p>
+          </div>
+        </div>
+
+        <div class="card animate">
+          <div class="card__body">
+            <span class="card__tag">継続中</span>
+            <h2 class="card__title">🤝 偕楽園 梅染めアドバイザー</h2>
+            <p class="card__text">
+              偕楽園の梅染めアドバイザーとして活動しています。
+              参加者への指導・実技サポートを行い、地域住民の環境意識向上にも貢献しています。
+            </p>
+          </div>
+        </div>
+
+        <div class="card animate animate-delay-1">
+          <div class="card__body">
+            <span class="card__tag">継続中</span>
+            <h2 class="card__title">♻️ 廃棄物ゼロへの取り組み</h2>
+            <p class="card__text">
+              梅の剪定枝を染料に、端材の和紙をコインケースに再利用するなど、
+              廃棄物をゼロに近づける循環型の製品開発を続けています。
+              今後は梅以外の廃棄物の活用も検討しています。
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- タイムライン -->
+      <div class="section-header animate" style="margin-top: var(--space-4xl)">
+        <span class="section-eyebrow">Timeline</span>
+        <h2 class="section-title">活動の歩み</h2>
+      </div>
+
+      <div class="news__list animate">
+        <div class="news__item">
+          <time class="news__item-date">2020</time>
+          <span class="news__item-tag">開始</span>
+          <p class="news__item-title">水戸ユネスコ協会・林先生の取り組みを知り、梅染め探究を開始</p>
+        </div>
+        <div class="news__item">
+          <time class="news__item-date">2021〜2022</time>
+          <span class="news__item-tag">研究</span>
+          <p class="news__item-title">染液の濃度・温度・時間の最適化実験を重ねる。KOH使用で発色が改善されることを発見</p>
+        </div>
+        <div class="news__item">
+          <time class="news__item-date">2023</time>
+          <span class="news__item-tag">展開</span>
+          <p class="news__item-title">水戸黄門まつり・まちなかフェスティバルに出展。うちわ・コインケースの販売を開始</p>
+        </div>
+        <div class="news__item">
+          <time class="news__item-date">2024</time>
+          <span class="news__item-tag">発展</span>
+          <p class="news__item-title">ユネスコスクール全国大会で発表。老人ホームボランティア。メンバー22名に拡大</p>
+        </div>
+        <div class="news__item">
+          <time class="news__item-date">今後</time>
+          <span class="news__item-tag">展望</span>
+          <p class="news__item-title">梅以外の廃棄物活用・ワークショップのさらなる改良・地域魅力の全国発信を目指す</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+</main>
+
+  <!-- ================================================================
+       【共通フッター読み込みエリア】
+       ここから ↓↓↓
+       ※ src/components/footer.html が JavaScript (Fetch API) で自動挿入されます。
+       ※ デザインやリンクの修正は「src/components/footer.html」を編集してください。
+  ================================================================ -->
+  <div id="site-footer-placeholder"></div>
+  <!-- ↑↑↑ ここまで【共通フッター読み込みエリア】 ==================== -->
+
+  <button class="back-to-top" id="back-to-top" aria-label="ページトップへ戻る">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- JavaScriptファイルの読み込み -->
+  <!-- サイト全体の基本機能（アニメーション・スクロール等） -->
+  <script src="../assets/js/main.js"></script>
+  <!-- 共通ヘッダー・フッターの読み込み (Fetch API) -->
+  <script src="../assets/js/components.js"></script>
+</body>
+</html>

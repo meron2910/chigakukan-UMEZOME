@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--
+================================================================
+  UMEZOME - 資料一覧ページ
+  ファイル: src/pages/documents.html
+  【資料追加方法】
+    .doc-card を1つコピーして href・内容を編集してください
+    PDFファイルは deta/ フォルダに入れてください
+================================================================
+-->
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>資料 | UMEZOME - 智学館中等教育学校 梅染め探究 PBL</title>
+  <meta name="description" content="智学館中等教育学校 梅染め探究PBLの発表資料・レポートのダウンロードページ。">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✿</text></svg>">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- ================================================================
+       【共通ヘッダー読み込みエリア】
+       ここから ↓↓↓
+       ※ src/components/header.html が JavaScript (Fetch API) で自動挿入されます。
+       ※ デザインやリンクの修正は「src/components/header.html」を編集してください。
+       ※ 直接ダブルクリック(file://)した場合はセキュリティ制限で動作しません。
+          VS Codeの「Live Server」などのWebサーバー環境で開いてください。
+  ================================================================ -->
+  <div id="site-header-placeholder"></div>
+  <!-- ↑↑↑ ここまで【共通ヘッダー読み込みエリア】 ==================== -->
+
+
+<main id="main-content">
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="パンくずリスト">
+        <a href="../index.html">ホーム</a>
+        <span class="breadcrumb__separator" aria-hidden="true">›</span>
+        <span aria-current="page">資料</span>
+      </nav>
+      <p class="section-eyebrow">Documents</p>
+      <h1 class="page-header__title">資料</h1>
+      <p class="page-header__lead">活動に関する発表スライドやレポートをご覧いただけます。</p>
+    </div>
+  </div>
+
+  <section class="section">
+    <div class="container">
+
+      <!-- 2024年度資料 -->
+      <div class="section-header section-header--left animate">
+        <span class="section-eyebrow">2024</span>
+        <h2 class="section-title">2024年度資料</h2>
+      </div>
+
+      <!--
+        資料カード追加方法:
+          1. <a class="doc-card animate"> をコピー
+          2. href に deta/ フォルダ内のPDFパスを入力
+             例: href="../../deta/ファイル名.pdf"
+          3. タイトル・種別・年度を編集
+          4. 新しいPDFは deta/ フォルダに入れてください
+      -->
+      <div class="documents__grid mb-2xl">
+
+        <a class="doc-card animate"
+           href="../../deta/5年間の梅染め探究～廃棄物からの地域の魅力創造〜 - Google ドキュメント.pdf"
+           target="_blank" rel="noopener noreferrer">
+          <div class="doc-card__icon">📄</div>
+          <div class="doc-card__info">
+            <h2 class="doc-card__title">5年間の梅染め探究まとめレポート</h2>
+            <div class="doc-card__meta"><span>PDF</span><span>2024年</span></div>
+          </div>
+          <div class="doc-card__download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+          </div>
+        </a>
+
+        <a class="doc-card animate animate-delay-1"
+           href="../../deta/2024 智学館15期生PBL.pdf"
+           target="_blank" rel="noopener noreferrer">
+          <div class="doc-card__icon">📊</div>
+          <div class="doc-card__info">
+            <h2 class="doc-card__title">2024年 智学館15期生 PBL発表スライド</h2>
+            <div class="doc-card__meta"><span>PDF</span><span>2024年</span></div>
+          </div>
+          <div class="doc-card__download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+          </div>
+        </a>
+
+        <a class="doc-card animate animate-delay-2"
+           href="../../deta/第16回ユネスコスクール全国大会　発表動画.pdf"
+           target="_blank" rel="noopener noreferrer">
+          <div class="doc-card__icon">🎤</div>
+          <div class="doc-card__info">
+            <h2 class="doc-card__title">第16回ユネスコスクール全国大会 発表資料</h2>
+            <div class="doc-card__meta"><span>PDF</span><span>2024年</span></div>
+          </div>
+          <div class="doc-card__download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+          </div>
+        </a>
+
+        <a class="doc-card animate animate-delay-3"
+           href="../../deta/PBLDAY 三上 真音.pdf"
+           target="_blank" rel="noopener noreferrer">
+          <div class="doc-card__icon">📑</div>
+          <div class="doc-card__info">
+            <h2 class="doc-card__title">PBLDAY 発表 (三上 真音)</h2>
+            <div class="doc-card__meta"><span>PDF</span><span>2024年</span></div>
+          </div>
+          <div class="doc-card__download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+          </div>
+        </a>
+
+        <a class="doc-card animate"
+           href="../../deta/3年次PBLday スライド.pdf"
+           target="_blank" rel="noopener noreferrer">
+          <div class="doc-card__icon">🎯</div>
+          <div class="doc-card__info">
+            <h2 class="doc-card__title">3年次 PBL Day スライド</h2>
+            <div class="doc-card__meta"><span>PDF</span><span>2024年</span></div>
+          </div>
+          <div class="doc-card__download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+          </div>
+        </a>
+
+        <a class="doc-card animate animate-delay-1"
+           href="../../deta/MATOME--------------------------------.pdf"
+           target="_blank" rel="noopener noreferrer">
+          <div class="doc-card__icon">📋</div>
+          <div class="doc-card__info">
+            <h2 class="doc-card__title">活動まとめ資料 (MATOME)</h2>
+            <div class="doc-card__meta"><span>PDF</span><span>2024年</span></div>
+          </div>
+          <div class="doc-card__download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+          </div>
+        </a>
+
+      </div><!-- /documents__grid 2024 -->
+
+      <hr class="divider animate">
+
+      <!-- 2023年度資料 -->
+      <div class="section-header section-header--left animate" style="margin-top: var(--space-2xl)">
+        <span class="section-eyebrow">2023</span>
+        <h2 class="section-title">2023年度資料</h2>
+      </div>
+
+      <div class="documents__grid">
+
+        <a class="doc-card animate"
+           href="../../deta/2023年度 PBL Day発表用スライド（前期用）.pdf"
+           target="_blank" rel="noopener noreferrer">
+          <div class="doc-card__icon">📑</div>
+          <div class="doc-card__info">
+            <h2 class="doc-card__title">2023年度 PBL Day スライド（前期）</h2>
+            <div class="doc-card__meta"><span>PDF</span><span>2023年</span></div>
+          </div>
+          <div class="doc-card__download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+          </div>
+        </a>
+
+        <a class="doc-card animate animate-delay-1"
+           href="../../deta/2023年度 PBL Day発表用スライド（後期用） .pdf"
+           target="_blank" rel="noopener noreferrer">
+          <div class="doc-card__icon">📑</div>
+          <div class="doc-card__info">
+            <h2 class="doc-card__title">2023年度 PBL Day スライド（後期）</h2>
+            <div class="doc-card__meta"><span>PDF</span><span>2023年</span></div>
+          </div>
+          <div class="doc-card__download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+          </div>
+        </a>
+
+        <a class="doc-card animate animate-delay-2"
+           href="../../deta/【五十嵐１班】２０２３年度　PBLDay　２・３年スライド発表 のコピー.pdf"
+           target="_blank" rel="noopener noreferrer">
+          <div class="doc-card__icon">📊</div>
+          <div class="doc-card__info">
+            <h2 class="doc-card__title">2023年度 PBL Day スライド（五十嵐班）</h2>
+            <div class="doc-card__meta"><span>PDF</span><span>2023年</span></div>
+          </div>
+          <div class="doc-card__download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+          </div>
+        </a>
+
+        <a class="doc-card animate animate-delay-3"
+           href="../../deta/【八木班】２０２３年度　PBLDay　２・３年スライド発表.pdf"
+           target="_blank" rel="noopener noreferrer">
+          <div class="doc-card__icon">📊</div>
+          <div class="doc-card__info">
+            <h2 class="doc-card__title">2023年度 PBL Day スライド（八木班）</h2>
+            <div class="doc-card__meta"><span>PDF</span><span>2023年</span></div>
+          </div>
+          <div class="doc-card__download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+          </div>
+        </a>
+
+        <a class="doc-card animate"
+           href="../../deta/ボランティア・スピリット・アワード - Google ドキュメント.pdf"
+           target="_blank" rel="noopener noreferrer">
+          <div class="doc-card__icon">🌟</div>
+          <div class="doc-card__info">
+            <h2 class="doc-card__title">ボランティア・スピリット・アワード 申請資料</h2>
+            <div class="doc-card__meta"><span>PDF</span><span>2023年</span></div>
+          </div>
+          <div class="doc-card__download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+          </div>
+        </a>
+
+        <a class="doc-card animate animate-delay-1"
+           href="../../deta/2023年度2・3年次PBLガイダンス.pdf"
+           target="_blank" rel="noopener noreferrer">
+          <div class="doc-card__icon">📖</div>
+          <div class="doc-card__info">
+            <h2 class="doc-card__title">2023年度 2・3年次 PBLガイダンス資料</h2>
+            <div class="doc-card__meta"><span>PDF</span><span>2023年</span></div>
+          </div>
+          <div class="doc-card__download-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+            </svg>
+          </div>
+        </a>
+
+      </div><!-- /documents__grid 2023 -->
+
+    </div>
+  </section>
+</main>
+
+  <!-- ================================================================
+       【共通フッター読み込みエリア】
+       ここから ↓↓↓
+       ※ src/components/footer.html が JavaScript (Fetch API) で自動挿入されます。
+       ※ デザインやリンクの修正は「src/components/footer.html」を編集してください。
+  ================================================================ -->
+  <div id="site-footer-placeholder"></div>
+  <!-- ↑↑↑ ここまで【共通フッター読み込みエリア】 ==================== -->
+
+  <button class="back-to-top" id="back-to-top" aria-label="ページトップへ戻る">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- JavaScriptファイルの読み込み -->
+  <!-- サイト全体の基本機能（アニメーション・スクロール等） -->
+  <script src="../assets/js/main.js"></script>
+  <!-- 共通ヘッダー・フッターの読み込み (Fetch API) -->
+  <script src="../assets/js/components.js"></script>
+</body>
+</html>

@@ -1,0 +1,979 @@
+<!DOCTYPE html>
+<!--
+================================================================
+  UMEZOME - 智学館中等教育学校 梅染め探究 PBL
+  トップページ (index.html)
+================================================================
+
+  ファイル階層:
+    UMEZOME/
+    ├── index.html                  ← このファイル (トップページ)
+    ├── src/
+    │   ├── pages/                  ← 各ページHTML
+    │   │   ├── about.html          - 活動概要ページ
+    │   │   ├── news.html           - ニュース一覧
+    │   │   ├── events.html         - イベント一覧
+    │   │   ├── blog.html           - ブログ一覧
+    │   │   ├── products.html       - 製品紹介
+    │   │   ├── achievements.html   - 実績・受賞
+    │   │   └── documents.html      - 資料ダウンロード
+    │   └── assets/
+    │       ├── css/
+    │       │   └── style.css       ← 全スタイル (1ファイルで管理)
+    │       ├── js/
+    │       │   └── main.js         ← 全ページ共通JS
+    │       └── docs/               ← PDF等ダウンロード資料
+    ├── picture/                    ← 写真フォルダ (全写真をここに)
+    └── deta/                       ← 参考資料 (PDF等)
+
+  【ページ追加方法】
+    1. src/pages/ に新しい .html ファイルを作成
+    2. このファイルの <nav> にリンクを追加
+    3. フッターの <nav> にもリンクを追加
+
+================================================================
+-->
+<html lang="ja">
+<head>
+  <!-- 基本メタデータ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: タイトルと概要 -->
+  <title>UMEZOME | 智学館中等教育学校 梅染め探究 PBL</title>
+  <meta name="description"
+        content="智学館中等教育学校の生徒による梅染め探究PBLプロジェクト。偕楽園の剪定梅枝を活用し、梅染め製品の開発・ワークショップ・地域活性化に取り組んでいます。">
+  <meta name="keywords" content="梅染め,智学館,PBL,偕楽園,水戸,草木染め,探究学習">
+  <meta name="author" content="智学館中等教育学校 PBL梅染めグループ">
+
+  <!-- OGP (SNSシェア時の見た目) -->
+  <meta property="og:type"        content="website">
+  <meta property="og:title"       content="UMEZOME | 智学館中等教育学校 梅染め探究 PBL">
+  <meta property="og:description" content="偕楽園の剪定梅枝を活用した梅染め探究プロジェクト。水戸の新たな地域の魅力を創造します。">
+  <meta property="og:locale"      content="ja_JP">
+
+  <!-- ファビコン (絵文字で代用) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✿</text></svg>">
+
+  <!-- スタイルシート (全スタイルはここから読み込む) -->
+  <link rel="stylesheet" href="src/assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- ================================================================
+       【共通ヘッダー読み込みエリア】
+       ここから ↓↓↓
+       ※ src/components/header.html が JavaScript (Fetch API) で自動挿入されます。
+       ※ デザインやリンクの修正は「src/components/header.html」を編集してください。
+       ※ 直接ダブルクリック(file://)した場合はセキュリティ制限で動作しません。
+          VS Codeの「Live Server」などのWebサーバー環境で開いてください。
+  ================================================================ -->
+  <div id="site-header-placeholder"></div>
+  <!-- ↑↑↑ ここまで【共通ヘッダー読み込みエリア】 ==================== -->
+
+
+  <!-- ================================================================
+       メインコンテンツ
+  ================================================================ -->
+  <main id="main-content">
+
+    <!-- ====== ヒーローセクション ====== -->
+    <!--
+      写真スライドショーエリア
+      background-image に picture/ フォルダの写真パスを指定します。
+      写真を追加・変更するときは data-src 属性を編集してください。
+    -->
+    <section class="hero" id="top" aria-label="ヒーローセクション">
+
+      <!-- スライドショー背景写真 -->
+      <div class="hero__slides" aria-hidden="true">
+        <!-- スライド1: data-srcにpictureフォルダの写真パスを入れてください -->
+        <div class="hero__slide active"
+             style="background-image: url('picture/1714727376145.jpg')">
+        </div>
+        <!-- スライド2 -->
+        <div class="hero__slide"
+             style="background-image: url('picture/DSCPDC_0002_BURST20240804111341343_COVER.JPG')">
+        </div>
+        <!-- スライド3 -->
+        <div class="hero__slide"
+             style="background-image: url('picture/DSC_4276.JPG')">
+        </div>
+        <!-- 【写真追加方法】
+             <div class="hero__slide"
+                  style="background-image: url('picture/ファイル名.jpg')">
+             </div>
+             を追加してください。
+        -->
+      </div>
+
+      <!-- ダークオーバーレイ (テキストを読みやすくする) -->
+      <div class="hero__overlay" aria-hidden="true"></div>
+
+      <!-- ヒーローコンテンツテキスト -->
+      <div class="hero__content">
+        <!-- 小さなラベル -->
+        <p class="hero__eyebrow">Chigakukan Junior & Senior High School · PBL</p>
+
+        <!-- メインタイトル -->
+        <h1 class="hero__title">
+          梅の枝から<br>
+          <span class="accent">新たな魅力</span>を
+        </h1>
+
+        <!-- サブタイトル -->
+        <p class="hero__subtitle">
+          偕楽園の剪定された梅の枝を染料に。<br>
+          廃棄物から生まれる、水戸の新たな地域の魅力創造。
+        </p>
+
+        <!-- CTAボタン -->
+        <div class="hero__cta-group">
+          <a href="#about" class="btn-hero-primary">活動を見る</a>
+          <a href="#products" class="btn-hero-secondary">製品を見る</a>
+        </div>
+      </div>
+
+      <!-- スクロールダウン誘導 -->
+      <div class="hero__scroll-indicator" aria-hidden="true">
+        <span>SCROLL</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M12 5v14M5 12l7 7 7-7"/>
+        </svg>
+      </div>
+
+    </section>
+
+
+    <!-- ====== 活動概要セクション (ABOUT) ====== -->
+    <section class="section section--alt" id="about" aria-label="活動概要">
+      <div class="container">
+
+        <div class="section-header animate">
+          <span class="section-eyebrow">About</span>
+          <h2 class="section-title">活動概要</h2>
+          <p class="section-subtitle">
+            偕楽園の梅の木を使用して、草木染めを活かした<br>
+            水戸市の魅力を創出する取り組みをしております。
+          </p>
+        </div>
+
+        <!-- 左テキスト + 右画像の2カラムレイアウト -->
+        <div class="about__grid">
+
+          <!-- テキストカラム -->
+          <div class="about__text-col">
+            <p class="about__lead animate">
+              「もったいない」から始まった、<br>
+              梅の木との新たな関係
+            </p>
+            <p class="about__body animate animate-delay-1">
+              水戸・偕楽園の梅の木は、毎年剪定の際に大量の枝が廃棄されています。
+              この問題に気づいた智学館中等教育学校の生徒たちは、
+              水戸ユネスコ協会の指導のもと、捨てられるはずの梅の枝を
+              天然染料として活用する「梅染め」に取り組み始めました。
+            </p>
+            <p class="about__body animate animate-delay-2">
+              梅のチップを水と薬品で煮出した染液で染めた和紙や布は、
+              やさしいピンク〜ローズの美しい色合いを持ちます。
+              水酸化カリウム(KOH)を使うと発色がより鮮やかになることも
+              実験で発見しました。
+            </p>
+
+            <!-- 3つの特徴 -->
+            <div class="about__features">
+              <!-- 特徴1 -->
+              <div class="about__feature-card animate animate-delay-1">
+                <span class="about__feature-icon">🌸</span>
+                <h3 class="about__feature-title">梅染め</h3>
+                <p class="about__feature-desc">偕楽園の剪定枝から天然染料を抽出</p>
+              </div>
+              <!-- 特徴2 -->
+              <div class="about__feature-card animate animate-delay-2">
+                <span class="about__feature-icon">🛍️</span>
+                <h3 class="about__feature-title">製品開発</h3>
+                <p class="about__feature-desc">うちわ・コインケース等を製作・販売</p>
+              </div>
+              <!-- 特徴3 -->
+              <div class="about__feature-card animate animate-delay-3">
+                <span class="about__feature-icon">🤝</span>
+                <h3 class="about__feature-title">地域貢献</h3>
+                <p class="about__feature-desc">水戸のまつりでワークショップを開催</p>
+              </div>
+            </div>
+          </div><!-- /テキストカラム -->
+
+          <!-- 画像カラム -->
+          <div class="about__image-col animate animate-delay-2">
+            <!-- メイン写真: picture/ フォルダから使用 -->
+            <img
+              src="picture/1714727376145.jpg"
+              alt="梅染めワークショップの様子"
+              class="about__image-main"
+              loading="lazy"
+            >
+            <!-- 活動年数フローティングカード -->
+            <div class="about__stat-card">
+              <div class="about__stat-number">5+</div>
+              <div class="about__stat-label">年間の探究活動</div>
+            </div>
+          </div><!-- /画像カラム -->
+
+        </div><!-- /about__grid -->
+      </div><!-- /container -->
+    </section><!-- /about -->
+
+
+    <!-- ====== ニュースセクション (NEWS) ====== -->
+    <section class="section" id="news" aria-label="ニュース">
+      <div class="container">
+
+        <div class="section-header animate">
+          <span class="section-eyebrow">News</span>
+          <h2 class="section-title">ニュース</h2>
+          <p class="section-subtitle">最新の活動情報をお届けします。</p>
+        </div>
+
+        <!-- ニュースリスト
+             【追加方法】下の <li> をコピーして日付・タグ・タイトルを書き換えてください -->
+        <ul class="news__list">
+
+          <!-- ニュースアイテム1 -->
+          <li class="news__item animate"
+              onclick="window.location='src/pages/news.html'"
+              role="link" tabindex="0" aria-label="ニュース記事を開く">
+            <time class="news__item-date" datetime="2024-11-03">2024.11.03</time>
+            <span class="news__item-tag">イベント</span>
+            <p class="news__item-title">
+              水戸黄門まつりにて梅染めワークショップを開催しました。多くの方にご参加いただきました。
+            </p>
+          </li>
+
+          <!-- ニュースアイテム2 -->
+          <li class="news__item animate animate-delay-1"
+              onclick="window.location='src/pages/news.html'"
+              role="link" tabindex="0">
+            <time class="news__item-date" datetime="2024-10-15">2024.10.15</time>
+            <span class="news__item-tag">受賞</span>
+            <p class="news__item-title">
+              第16回ユネスコスクール全国大会にて発表を行いました。
+            </p>
+          </li>
+
+          <!-- ニュースアイテム3 -->
+          <li class="news__item animate animate-delay-2"
+              onclick="window.location='src/pages/news.html'"
+              role="link" tabindex="0">
+            <time class="news__item-date" datetime="2024-09-20">2024.09.20</time>
+            <span class="news__item-tag">活動</span>
+            <p class="news__item-title">
+              水戸まちなかフェスティバルにてうちわ作りワークショップを開催。来場者から高い評価をいただきました。
+            </p>
+          </li>
+
+          <!-- ニュースアイテム4 -->
+          <li class="news__item animate animate-delay-3"
+              onclick="window.location='src/pages/news.html'"
+              role="link" tabindex="0">
+            <time class="news__item-date" datetime="2024-06-05">2024.06.05</time>
+            <span class="news__item-tag">活動</span>
+            <p class="news__item-title">
+              偕楽園の梅の木から剪定枝を受け取り、新しいチップを制作しました。今年度の活動を開始しました。
+            </p>
+          </li>
+
+          <!-- ニュースアイテム5 -->
+          <li class="news__item animate animate-delay-4"
+              onclick="window.location='src/pages/news.html'"
+              role="link" tabindex="0">
+            <time class="news__item-date" datetime="2024-03-20">2024.03.20</time>
+            <span class="news__item-tag">ボランティア</span>
+            <p class="news__item-title">
+              老人ホームにてボランティア活動を実施。梅染め体験を通じて地域の方と交流しました。
+            </p>
+          </li>
+
+        </ul><!-- /news__list -->
+
+        <div class="section-action animate">
+          <a href="src/pages/news.html" class="btn btn--outline">
+            ニュースを全て見る
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section><!-- /news -->
+
+
+    <!-- ====== イベントセクション (EVENTS) ====== -->
+    <section class="section section--alt" id="events" aria-label="イベント">
+      <div class="container">
+
+        <div class="section-header animate">
+          <span class="section-eyebrow">Events</span>
+          <h2 class="section-title">イベント</h2>
+          <p class="section-subtitle">
+            水戸市内の様々なお祭りでワークショップを開催しています。
+          </p>
+        </div>
+
+        <!-- イベントグリッド
+             【追加方法】.event-card を1つコピーして内容を編集してください -->
+        <div class="events__grid">
+
+          <!-- イベントカード1 -->
+          <article class="event-card animate">
+            <div class="event-card__date-box" aria-label="開催日">
+              <span class="event-card__month">NOV</span>
+              <span class="event-card__day">3</span>
+            </div>
+            <div class="event-card__content">
+              <h3 class="event-card__title">水戸黄門まつり</h3>
+              <p class="event-card__location">
+                📍 水戸市内
+              </p>
+              <p class="event-card__desc">
+                梅染めうちわ・コインケース作りワークショップを開催。
+                梅染めの魅力を伝えます。
+              </p>
+              <span class="event-card__status event-card__status--past">終了</span>
+            </div>
+          </article>
+
+          <!-- イベントカード2 -->
+          <article class="event-card animate animate-delay-1">
+            <div class="event-card__date-box" aria-label="開催日">
+              <span class="event-card__month">SEP</span>
+              <span class="event-card__day">20</span>
+            </div>
+            <div class="event-card__content">
+              <h3 class="event-card__title">水戸まちなかフェスティバル</h3>
+              <p class="event-card__location">
+                📍 水戸市中心部
+              </p>
+              <p class="event-card__desc">
+                地域の人々と交流しながら梅染め体験を提供。
+                多くのご参加をいただきました。
+              </p>
+              <span class="event-card__status event-card__status--past">終了</span>
+            </div>
+          </article>
+
+          <!-- イベントカード3 -->
+          <article class="event-card animate animate-delay-2">
+            <div class="event-card__date-box" aria-label="開催日">
+              <span class="event-card__month">OCT</span>
+              <span class="event-card__day">15</span>
+            </div>
+            <div class="event-card__content">
+              <h3 class="event-card__title">ときわ祭</h3>
+              <p class="event-card__location">
+                📍 智学館中等教育学校
+              </p>
+              <p class="event-card__desc">
+                学校文化祭でも梅染め体験ブースを出展。
+                在校生・保護者の皆様に体験いただきました。
+              </p>
+              <span class="event-card__status event-card__status--past">終了</span>
+            </div>
+          </article>
+
+          <!-- イベントカード4 -->
+          <article class="event-card animate animate-delay-3">
+            <div class="event-card__date-box" aria-label="開催日">
+              <span class="event-card__month">JUN</span>
+              <span class="event-card__day">✿</span>
+            </div>
+            <div class="event-card__content">
+              <h3 class="event-card__title">次回イベント調整中</h3>
+              <p class="event-card__location">
+                📍 未定
+              </p>
+              <p class="event-card__desc">
+                次回のワークショップ開催に向けて準備中です。
+                SNSで最新情報をお届けします。
+              </p>
+              <span class="event-card__status event-card__status--upcoming">準備中</span>
+            </div>
+          </article>
+
+        </div><!-- /events__grid -->
+
+        <div class="section-action animate">
+          <a href="src/pages/events.html" class="btn btn--outline">
+            イベント一覧を見る
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section><!-- /events -->
+
+
+    <!-- ====== ブログセクション (BLOG) ====== -->
+    <section class="section" id="blog" aria-label="ブログ">
+      <div class="container">
+
+        <div class="section-header animate">
+          <span class="section-eyebrow">Blog</span>
+          <h2 class="section-title">ブログ</h2>
+          <p class="section-subtitle">活動の記録や研究の成果を発信しています。</p>
+        </div>
+
+        <div class="blog__grid">
+
+          <!-- フィーチャードカード (大きめ, 3列スパン) -->
+          <article class="blog__featured animate">
+            <!-- フィーチャード写真 -->
+            <img
+              src="picture/DSCPDC_0002_BURST20240804111341343_COVER.JPG"
+              alt="梅染めプロセスの様子"
+              class="blog__featured-image"
+              loading="lazy"
+            >
+            <div class="blog__featured-body">
+              <span class="card__tag">研究レポート</span>
+              <time class="card__date" datetime="2024-10-01">2024.10.01</time>
+              <h3 class="blog__featured-title">
+                5年間の梅染め探究〜廃棄物から地域の魅力を創造する試み〜
+              </h3>
+              <p class="blog__featured-excerpt">
+                偕楽園の梅の木の剪定された枝が大量に廃棄されていることを知り、
+                その枝を梅の染料として活用する取り組みを始めて5年。
+                水酸化カリウム(KOH)を用いると発色が良好になることを発見し、
+                うちわ・コインケース・扇子など多様な製品開発に成功しました。
+              </p>
+              <a href="src/pages/blog.html" class="card__link">
+                続きを読む
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M5 12h14M12 5l7 7-7 7"/>
+                </svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- 通常ブログカード1 -->
+          <article class="card animate animate-delay-1">
+            <div class="card__image-wrapper">
+              <img
+                src="picture/DSC_4276.JPG"
+                alt="活動の様子"
+                class="card__image"
+                loading="lazy"
+              >
+            </div>
+            <div class="card__body">
+              <span class="card__tag">活動記録</span>
+              <time class="card__date" datetime="2024-09-15">2024.09.15</time>
+              <h3 class="card__title">黄門まつりワークショップ開催レポート</h3>
+              <p class="card__text">
+                水戸黄門まつりで開催したワークショップの様子をお届けします。
+                多くの来場者に梅染めの魅力を伝えることができました。
+              </p>
+              <a href="src/pages/blog.html" class="card__link">読む</a>
+            </div>
+          </article>
+
+          <!-- 通常ブログカード2 -->
+          <article class="card animate animate-delay-2">
+            <div class="card__image-wrapper">
+              <img
+                src="picture/1715059536199.jpg"
+                alt="実験の様子"
+                class="card__image"
+                loading="lazy"
+              >
+            </div>
+            <div class="card__body">
+              <span class="card__tag">研究</span>
+              <time class="card__date" datetime="2024-07-10">2024.07.10</time>
+              <h3 class="card__title">染液の温度と発色の関係を実験しました</h3>
+              <p class="card__text">
+                80℃を保つことで最良の発色が得られることを確認。
+                温度管理が梅染めの品質を左右することがわかりました。
+              </p>
+              <a href="src/pages/blog.html" class="card__link">読む</a>
+            </div>
+          </article>
+
+          <!-- 通常ブログカード3 -->
+          <article class="card animate animate-delay-3">
+            <div class="card__image-wrapper">
+              <img
+                src="picture/1714727555442.jpg"
+                alt="製品の様子"
+                class="card__image"
+                loading="lazy"
+              >
+            </div>
+            <div class="card__body">
+              <span class="card__tag">製品開発</span>
+              <time class="card__date" datetime="2024-05-01">2024.05.01</time>
+              <h3 class="card__title">新製品「梅染めコインケース」完成！</h3>
+              <p class="card__text">
+                うちわ作りで余った梅染め和紙を再利用したコインケース。
+                参加者が自分で組み立てられる仕様にしました。
+              </p>
+              <a href="src/pages/blog.html" class="card__link">読む</a>
+            </div>
+          </article>
+
+        </div><!-- /blog__grid -->
+
+        <div class="section-action animate">
+          <a href="src/pages/blog.html" class="btn btn--outline">
+            ブログ一覧を見る
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section><!-- /blog -->
+
+
+    <!-- ====== 製品紹介セクション (PRODUCTS) ====== -->
+    <section class="section section--alt" id="products" aria-label="製品紹介">
+      <div class="container">
+
+        <div class="section-header animate">
+          <span class="section-eyebrow">Products</span>
+          <h2 class="section-title">製品紹介</h2>
+          <p class="section-subtitle">
+            梅染め和紙を使用した、世界にひとつのオリジナル製品です。
+          </p>
+        </div>
+
+        <!-- 製品グリッド -->
+        <div class="products__grid">
+
+          <!-- 製品カード1 -->
+          <article class="product-card animate">
+            <div class="product-card__image-wrapper">
+              <img
+                src="picture/1714727376145.jpg"
+                alt="梅染めうちわ"
+                class="product-card__image"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__badge">人気商品</span>
+              <h3 class="product-card__name">梅染めうちわ</h3>
+              <p class="product-card__desc">
+                梅染めした和紙を使用したうちわ。
+                参加者がスタンプを押して世界に一つだけのデザインに仕上げます。
+                自然由来の美しいピンク色が特徴です。
+              </p>
+            </div>
+          </article>
+
+          <!-- 製品カード2 -->
+          <article class="product-card animate animate-delay-1">
+            <div class="product-card__image-wrapper">
+              <img
+                src="picture/1714727555442.jpg"
+                alt="梅染めコインケース"
+                class="product-card__image"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__badge">新商品</span>
+              <h3 class="product-card__name">梅染めコインケース</h3>
+              <p class="product-card__desc">
+                うちわ作りで余った和紙を再利用したコインケース。
+                参加者が自分で組み立てるワークショップ形式。
+                エコデザインで好評を得ています。
+              </p>
+            </div>
+          </article>
+
+          <!-- 製品カード3 -->
+          <article class="product-card animate animate-delay-2">
+            <div class="product-card__image-wrapper">
+              <img
+                src="picture/1715059536199.jpg"
+                alt="梅染め和紙"
+                class="product-card__image"
+                loading="lazy"
+              >
+            </div>
+            <div class="product-card__body">
+              <span class="product-card__badge">素材</span>
+              <h3 class="product-card__name">梅染め和紙</h3>
+              <p class="product-card__desc">
+                天然の梅染液で染めた和紙。
+                発色の美しさを追求するため、染液の濃度・温度・時間を
+                綿密に管理して制作しています。
+              </p>
+            </div>
+          </article>
+
+        </div><!-- /products__grid -->
+
+        <!-- 製造プロセス (ステップ表示) -->
+        <div class="section-header animate" style="margin-top: var(--space-4xl); margin-bottom: var(--space-xl)">
+          <span class="section-eyebrow">Process</span>
+          <h3 class="section-title">製造工程</h3>
+        </div>
+
+        <div class="process-steps">
+          <!-- ステップ1 -->
+          <div class="process-step animate">
+            <div class="process-step__number">1</div>
+            <h4 class="process-step__title">枝の収集</h4>
+            <p class="process-step__desc">
+              偕楽園で剪定された梅の枝を受け取り、細かく砕いてチップを作ります。
+            </p>
+          </div>
+          <!-- ステップ2 -->
+          <div class="process-step animate animate-delay-1">
+            <div class="process-step__number">2</div>
+            <h4 class="process-step__title">染液の抽出</h4>
+            <p class="process-step__desc">
+              水と薬品(KOH)を加えて80℃で煮出し、美しいピンク色の染液を作ります。
+            </p>
+          </div>
+          <!-- ステップ3 -->
+          <div class="process-step animate animate-delay-2">
+            <div class="process-step__number">3</div>
+            <h4 class="process-step__title">和紙の染色</h4>
+            <p class="process-step__desc">
+              温度・時間を管理しながら和紙を染めます。色の濃さは煮る時間で調整。
+            </p>
+          </div>
+          <!-- ステップ4 -->
+          <div class="process-step animate animate-delay-3">
+            <div class="process-step__number">4</div>
+            <h4 class="process-step__title">製品完成</h4>
+            <p class="process-step__desc">
+              乾燥させた和紙をうちわやコインケースに加工して完成です。
+            </p>
+          </div>
+        </div><!-- /process-steps -->
+
+        <div class="section-action animate">
+          <a href="src/pages/products.html" class="btn btn--primary">
+            製品一覧を見る
+          </a>
+        </div>
+
+      </div>
+    </section><!-- /products -->
+
+
+    <!-- ====== 実績セクション (ACHIEVEMENTS) ====== -->
+    <section class="section section--dark" id="achievements" aria-label="実績">
+      <div class="container">
+
+        <div class="section-header animate">
+          <span class="section-eyebrow" style="color: var(--color-plum-300)">Achievements</span>
+          <h2 class="section-title">実績・受賞</h2>
+          <p class="section-subtitle">
+            5年間の活動で積み上げてきた成果と受賞歴です。
+          </p>
+        </div>
+
+        <!-- 統計数値 -->
+        <div class="achievement-stats">
+          <div class="achievement-stat animate">
+            <div class="achievement-stat__number">5+</div>
+            <div class="achievement-stat__label">年間の活動実績</div>
+          </div>
+          <div class="achievement-stat animate animate-delay-1">
+            <div class="achievement-stat__number">22</div>
+            <div class="achievement-stat__label">PBLグループメンバー</div>
+          </div>
+          <div class="achievement-stat animate animate-delay-2">
+            <div class="achievement-stat__number">100+</div>
+            <div class="achievement-stat__label">ワークショップ参加者</div>
+          </div>
+          <div class="achievement-stat animate animate-delay-3">
+            <div class="achievement-stat__number">3</div>
+            <div class="achievement-stat__label">主な受賞・表彰</div>
+          </div>
+        </div>
+
+        <!-- 受賞・実績カード -->
+        <div class="awards-grid">
+
+          <div class="award-card animate">
+            <span class="award-card__icon">🏆</span>
+            <h3 class="award-card__title">ユネスコスクール全国大会 発表</h3>
+            <p class="award-card__org">第16回ユネスコスクール全国大会</p>
+            <p class="award-card__year">2024年</p>
+          </div>
+
+          <div class="award-card animate animate-delay-1">
+            <span class="award-card__icon">🌟</span>
+            <h3 class="award-card__title">ボランティア・スピリット・アワード 応募</h3>
+            <p class="award-card__org">プルデンシャル生命保険</p>
+            <p class="award-card__year">2023〜2024年</p>
+          </div>
+
+          <div class="award-card animate animate-delay-2">
+            <span class="award-card__icon">🎯</span>
+            <h3 class="award-card__title">PBL Day 発表</h3>
+            <p class="award-card__org">智学館中等教育学校</p>
+            <p class="award-card__year">2023・2024年</p>
+          </div>
+
+        </div><!-- /awards-grid -->
+
+        <div class="section-action animate">
+          <a href="src/pages/achievements.html" class="btn btn--outline" style="color: white; border-color: hsla(0,0%,100%,0.4)">
+            実績一覧を見る
+          </a>
+        </div>
+
+      </div>
+    </section><!-- /achievements -->
+
+
+    <!-- ====== 資料セクション (DOCUMENTS) ====== -->
+    <section class="section" id="documents" aria-label="資料">
+      <div class="container">
+
+        <div class="section-header animate">
+          <span class="section-eyebrow">Documents</span>
+          <h2 class="section-title">資料</h2>
+          <p class="section-subtitle">
+            活動に関する発表スライドやレポートを公開しています。
+          </p>
+        </div>
+
+        <!-- 資料グリッド
+             【追加方法】.doc-card を1つコピーして href と内容を変更してください -->
+        <div class="documents__grid">
+
+          <!-- 資料1 -->
+          <a class="doc-card animate"
+             href="deta/5年間の梅染め探究～廃棄物からの地域の魅力創造〜 - Google ドキュメント.pdf"
+             target="_blank"
+             rel="noopener noreferrer"
+             aria-label="梅染め探究まとめレポートをダウンロード">
+            <div class="doc-card__icon" aria-hidden="true">📄</div>
+            <div class="doc-card__info">
+              <h3 class="doc-card__title">5年間の梅染め探究レポート</h3>
+              <div class="doc-card__meta">
+                <span>PDF</span>
+                <span>2024年</span>
+              </div>
+            </div>
+            <div class="doc-card__download-btn" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- 資料2 -->
+          <a class="doc-card animate animate-delay-1"
+             href="deta/2024 智学館15期生PBL.pdf"
+             target="_blank"
+             rel="noopener noreferrer">
+            <div class="doc-card__icon" aria-hidden="true">📊</div>
+            <div class="doc-card__info">
+              <h3 class="doc-card__title">2024年 智学館15期生 PBL発表スライド</h3>
+              <div class="doc-card__meta">
+                <span>PDF</span>
+                <span>2024年</span>
+              </div>
+            </div>
+            <div class="doc-card__download-btn" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- 資料3 -->
+          <a class="doc-card animate animate-delay-2"
+             href="deta/第16回ユネスコスクール全国大会　発表動画.pdf"
+             target="_blank"
+             rel="noopener noreferrer">
+            <div class="doc-card__icon" aria-hidden="true">🎤</div>
+            <div class="doc-card__info">
+              <h3 class="doc-card__title">第16回ユネスコスクール全国大会 発表資料</h3>
+              <div class="doc-card__meta">
+                <span>PDF</span>
+                <span>2024年</span>
+              </div>
+            </div>
+            <div class="doc-card__download-btn" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+              </svg>
+            </div>
+          </a>
+
+          <!-- 資料4 -->
+          <a class="doc-card animate animate-delay-3"
+             href="deta/2023年度 PBL Day発表用スライド（前期用）.pdf"
+             target="_blank"
+             rel="noopener noreferrer">
+            <div class="doc-card__icon" aria-hidden="true">📑</div>
+            <div class="doc-card__info">
+              <h3 class="doc-card__title">2023年度 PBL Day 発表スライド（前期）</h3>
+              <div class="doc-card__meta">
+                <span>PDF</span>
+                <span>2023年</span>
+              </div>
+            </div>
+            <div class="doc-card__download-btn" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M7 10l5 5 5-5M12 15V3"/>
+              </svg>
+            </div>
+          </a>
+
+        </div><!-- /documents__grid -->
+
+        <div class="section-action animate">
+          <a href="src/pages/documents.html" class="btn btn--outline">
+            資料一覧を見る
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M5 12h14M12 5l7 7-7 7"/>
+            </svg>
+          </a>
+        </div>
+
+      </div>
+    </section><!-- /documents -->
+
+
+    <!-- ====== お問い合わせセクション (CONTACT) ====== -->
+    <section class="section section--alt" id="contact" aria-label="お問い合わせ">
+      <div class="container">
+
+        <div class="section-header animate">
+          <span class="section-eyebrow">Contact</span>
+          <h2 class="section-title">お問い合わせ</h2>
+        </div>
+
+        <div class="contact__wrapper animate">
+          <p class="contact__lead">
+            梅染め体験・ワークショップの申込み、取材・メディア掲載、
+            コラボレーションのご相談などはこちらからお気軽にどうぞ。
+          </p>
+
+          <!-- お問い合わせフォーム
+               ※ action属性にフォーム送信先URLを設定してください
+                  (例: Formspree, Google Forms など) -->
+          <form class="contact__form"
+                action="#"
+                method="POST"
+                id="contact-form"
+                novalidate>
+
+            <!-- お名前 -->
+            <div class="form-group">
+              <label class="form-label" for="contact-name">
+                お名前 <span class="required">*</span>
+              </label>
+              <input
+                type="text"
+                class="form-input"
+                id="contact-name"
+                name="name"
+                placeholder="山田 太郎"
+                required
+                autocomplete="name"
+              >
+            </div>
+
+            <!-- メールアドレス -->
+            <div class="form-group">
+              <label class="form-label" for="contact-email">
+                メールアドレス <span class="required">*</span>
+              </label>
+              <input
+                type="email"
+                class="form-input"
+                id="contact-email"
+                name="email"
+                placeholder="your@email.com"
+                required
+                autocomplete="email"
+              >
+            </div>
+
+            <!-- お問い合わせ種別 -->
+            <div class="form-group">
+              <label class="form-label" for="contact-type">お問い合わせ種別</label>
+              <select class="form-select" id="contact-type" name="type">
+                <option value="">選択してください</option>
+                <option value="workshop">ワークショップ申込み</option>
+                <option value="media">取材・メディア掲載</option>
+                <option value="collab">コラボレーション</option>
+                <option value="other">その他</option>
+              </select>
+            </div>
+
+            <!-- メッセージ -->
+            <div class="form-group">
+              <label class="form-label" for="contact-message">
+                メッセージ <span class="required">*</span>
+              </label>
+              <textarea
+                class="form-textarea"
+                id="contact-message"
+                name="message"
+                placeholder="お問い合わせ内容をご記入ください"
+                required
+              ></textarea>
+            </div>
+
+            <!-- 送信ボタン -->
+            <div class="text-center">
+              <button type="submit" class="btn btn--primary" id="submit-btn">
+                送信する
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 2L11 13M22 2L15 22 11 13 2 9l20-7z"/>
+                </svg>
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+    </section><!-- /contact -->
+
+  </main><!-- /main -->
+
+
+  <!-- ================================================================
+       【共通フッター読み込みエリア】
+       ここから ↓↓↓
+       ※ src/components/footer.html が JavaScript (Fetch API) で自動挿入されます。
+       ※ デザインやリンクの修正は「src/components/footer.html」を編集してください。
+  ================================================================ -->
+  <div id="site-footer-placeholder"></div>
+  <!-- ↑↑↑ ここまで【共通フッター読み込みエリア】 ==================== -->
+
+
+  <!-- ページトップへ戻るボタン -->
+  <button class="back-to-top" id="back-to-top" aria-label="ページトップへ戻る">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- JavaScriptファイルの読み込み -->
+  <!-- ※ body の末尾に配置することでページ表示を速くしています -->
+  <!-- サイト全体の基本機能（アニメーション・スライドショー等） -->
+  <script src="src/assets/js/main.js"></script>
+  <!-- 共通ヘッダー・フッターの読み込み (Fetch API) -->
+  <script src="src/assets/js/components.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<!--
+================================================================
+  UMEZOME - 製品紹介ページ
+  ファイル: src/pages/products.html
+  【製品追加方法】
+    .product-card を1つコピーして内容を編集してください
+================================================================
+-->
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>製品紹介 | UMEZOME - 智学館中等教育学校 梅染め探究 PBL</title>
+  <meta name="description" content="智学館中等教育学校 梅染め探究PBLの製品紹介。梅染めうちわ・コインケース・和紙など。">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✿</text></svg>">
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body>
+
+  <!-- ================================================================
+       【共通ヘッダー読み込みエリア】
+       ここから ↓↓↓
+       ※ src/components/header.html が JavaScript (Fetch API) で自動挿入されます。
+       ※ デザインやリンクの修正は「src/components/header.html」を編集してください。
+       ※ 直接ダブルクリック(file://)した場合はセキュリティ制限で動作しません。
+          VS Codeの「Live Server」などのWebサーバー環境で開いてください。
+  ================================================================ -->
+  <div id="site-header-placeholder"></div>
+  <!-- ↑↑↑ ここまで【共通ヘッダー読み込みエリア】 ==================== -->
+
+
+<main id="main-content">
+  <div class="page-header">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="パンくずリスト">
+        <a href="../index.html">ホーム</a>
+        <span class="breadcrumb__separator" aria-hidden="true">›</span>
+        <span aria-current="page">製品紹介</span>
+      </nav>
+      <p class="section-eyebrow">Products</p>
+      <h1 class="page-header__title">製品紹介</h1>
+      <p class="page-header__lead">梅染め和紙を使用した、世界に一つのオリジナル製品をご紹介します。</p>
+    </div>
+  </div>
+
+  <!-- 製品一覧 -->
+  <section class="section">
+    <div class="container">
+
+      <!--
+        製品グリッド
+        【写真の変更方法】
+          picture/ フォルダにある写真ファイル名を src に入力してください
+          例: src="../../picture/DSC_4076.JPG"
+      -->
+      <div class="products__grid">
+
+        <article class="product-card animate">
+          <div class="product-card__image-wrapper">
+            <img src="../../picture/1714727376145.jpg" alt="梅染めうちわ" class="product-card__image" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__badge">人気商品</span>
+            <h2 class="product-card__name">梅染めうちわ</h2>
+            <p class="product-card__desc">
+              偕楽園の梅枝から抽出した天然染料で染めた和紙を使用したうちわ。
+              参加者がスタンプを押して世界に一つだけのデザインに仕上げます。
+              自然由来の美しいピンク色が特徴の、エコでオリジナルな一品です。
+            </p>
+            <div class="tag-list mt-md">
+              <span class="tag">天然染料</span>
+              <span class="tag">和紙</span>
+              <span class="tag">オリジナル</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card animate animate-delay-1">
+          <div class="product-card__image-wrapper">
+            <img src="../../picture/1714727555442.jpg" alt="梅染めコインケース" class="product-card__image" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__badge">新商品</span>
+            <h2 class="product-card__name">梅染めコインケース</h2>
+            <p class="product-card__desc">
+              うちわ作りで余った梅染め和紙を再利用した、エコなコインケース。
+              参加者が自分で組み立てるワークショップ形式で提供しています。
+              廃棄ゼロを目指したサステナブルなデザインで好評を得ています。
+            </p>
+            <div class="tag-list mt-md">
+              <span class="tag">再利用</span>
+              <span class="tag">エコ</span>
+              <span class="tag">組み立て</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="product-card animate animate-delay-2">
+          <div class="product-card__image-wrapper">
+            <img src="../../picture/1715059536199.jpg" alt="梅染め和紙" class="product-card__image" loading="lazy">
+          </div>
+          <div class="product-card__body">
+            <span class="product-card__badge">素材</span>
+            <h2 class="product-card__name">梅染め和紙</h2>
+            <p class="product-card__desc">
+              梅染液で染めた和紙そのもの。染液の濃度・温度・時間を綿密に管理して制作しています。
+              水酸化カリウム(KOH)を用いることで発色がより良好になることを実験で発見しました。
+              各種製品の素材として使用しています。
+            </p>
+            <div class="tag-list mt-md">
+              <span class="tag">天然素材</span>
+              <span class="tag">KOH染色</span>
+              <span class="tag">高品質</span>
+            </div>
+          </div>
+        </article>
+
+      </div><!-- /products__grid -->
+    </div>
+  </section>
+
+  <!-- 製造プロセス -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header animate">
+        <span class="section-eyebrow">Process</span>
+        <h2 class="section-title">製造工程</h2>
+        <p class="section-subtitle">偕楽園の枝から製品完成まで、すべて生徒の手で行っています。</p>
+      </div>
+      <div class="process-steps">
+        <div class="process-step animate">
+          <div class="process-step__number">1</div>
+          <h3 class="process-step__title">枝の収集</h3>
+          <p class="process-step__desc">偕楽園で剪定された梅の枝を受け取り、細かく砕いてチップを作ります。</p>
+        </div>
+        <div class="process-step animate animate-delay-1">
+          <div class="process-step__number">2</div>
+          <h3 class="process-step__title">染液の抽出</h3>
+          <p class="process-step__desc">水と薬品(KOH)を加えて80℃で煮出し、美しいピンク色の染液を作ります。</p>
+        </div>
+        <div class="process-step animate animate-delay-2">
+          <div class="process-step__number">3</div>
+          <h3 class="process-step__title">和紙の染色</h3>
+          <p class="process-step__desc">温度・時間を管理しながら和紙を染めます。色の濃さは煮る時間で調整します。</p>
+        </div>
+        <div class="process-step animate animate-delay-3">
+          <div class="process-step__number">4</div>
+          <h3 class="process-step__title">製品完成</h3>
+          <p class="process-step__desc">乾燥させた和紙をうちわやコインケースに加工して完成です。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- フォトギャラリー -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header animate">
+        <span class="section-eyebrow">Gallery</span>
+        <h2 class="section-title">フォトギャラリー</h2>
+        <p class="section-subtitle">梅染め製品と活動の様子をご覧ください。</p>
+      </div>
+      <!--
+        ギャラリー写真の追加方法:
+          <div class="photo-gallery__item">
+            <img src="../../picture/ファイル名.jpg" alt="説明文" loading="lazy">
+          </div>
+        を追加してください。
+      -->
+      <div class="photo-gallery animate">
+        <div class="photo-gallery__item">
+          <img src="../../picture/1714727376145.jpg"  alt="ワークショップの様子1" loading="lazy">
+        </div>
+        <div class="photo-gallery__item">
+          <img src="../../picture/1714727555442.jpg"  alt="製品の様子1" loading="lazy">
+        </div>
+        <div class="photo-gallery__item">
+          <img src="../../picture/1714727555766.jpg"  alt="製品の様子2" loading="lazy">
+        </div>
+        <div class="photo-gallery__item">
+          <img src="../../picture/1715059536199.jpg"  alt="実験の様子1" loading="lazy">
+        </div>
+        <div class="photo-gallery__item">
+          <img src="../../picture/1715059547778.jpg"  alt="実験の様子2" loading="lazy">
+        </div>
+        <div class="photo-gallery__item">
+          <img src="../../picture/1715059568135.jpg"  alt="実験の様子3" loading="lazy">
+        </div>
+        <div class="photo-gallery__item">
+          <img src="../../picture/1715059585504.jpg"  alt="染液の様子" loading="lazy">
+        </div>
+        <div class="photo-gallery__item">
+          <img src="../../picture/1715059592742.jpg"  alt="染色の様子" loading="lazy">
+        </div>
+        <div class="photo-gallery__item">
+          <img src="../../picture/1715059677562.jpg"  alt="完成品の様子" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+  <!-- ================================================================
+       【共通フッター読み込みエリア】
+       ここから ↓↓↓
+       ※ src/components/footer.html が JavaScript (Fetch API) で自動挿入されます。
+       ※ デザインやリンクの修正は「src/components/footer.html」を編集してください。
+  ================================================================ -->
+  <div id="site-footer-placeholder"></div>
+  <!-- ↑↑↑ ここまで【共通フッター読み込みエリア】 ==================== -->
+
+  <button class="back-to-top" id="back-to-top" aria-label="ページトップへ戻る">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+
+  <!-- JavaScriptファイルの読み込み -->
+  <!-- サイト全体の基本機能（アニメーション・スクロール等） -->
+  <script src="../assets/js/main.js"></script>
+  <!-- 共通ヘッダー・フッターの読み込み (Fetch API) -->
+  <script src="../assets/js/components.js"></script>
+</body>
+</html>

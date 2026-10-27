@@ -1,0 +1,686 @@
+<!DOCTYPE html>
+<!--
+================================================================
+  UMEZOME - 活動概要ページ
+  ファイル: src/pages/about.html
+
+  【このページについて】
+    梅染め探究プロジェクトの詳細な活動概要ページです。
+    index.html の #about セクションを拡張し、より詳しい情報を掲載しています。
+
+  【コンテンツの更新方法】
+    - 基本情報: .about__lead / .about__body の文章を書き換えてください
+    - 活動の歩み: .timeline__item を1つコピーして追記してください
+    - よくある質問: .faq__item を1つコピーして追記してください
+    - 写真: picture/ フォルダに入れた写真を
+             src="../../picture/ファイル名.jpg" で表示できます
+
+  【ファイル階層での位置】
+    UMEZOME/
+    └── src/
+        └── pages/
+            └── about.html ← このファイル
+
+  【パスの基準】
+    このファイルから見た相対パス:
+      index.html    → ../index.html
+      CSS           → ../assets/css/style.css
+      JS            → ../assets/js/main.js
+      写真          → ../../picture/ファイル名.jpg
+      PDF           → ../../deta/ファイル名.pdf
+================================================================
+-->
+<html lang="ja">
+
+<head>
+  <!-- 基本メタデータ -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO: タイトルと概要 -->
+  <title>活動概要 | UMEZOME - 智学館中等教育学校 梅染め探究 PBL</title>
+  <meta name="description" content="智学館中等教育学校の梅染め探究PBLプロジェクトの活動概要。偕楽園の剪定枝を活用した草木染め研究・地域活性化の取り組みを紹介します。">
+  <meta name="keywords" content="梅染め,智学館,PBL,偕楽園,水戸,草木染め,探究学習,活動概要">
+
+  <!-- ファビコン -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✿</text></svg>">
+
+  <!-- スタイルシート (全スタイルはこの1ファイルで管理) -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+</head>
+
+<body>
+
+  <!-- ================================================================
+       ヘッダー・ナビゲーション
+       ※ 全ページ共通。ここを変更したら他ページも揃えてください。
+  ================================================================ -->
+  <header class="site-header" id="site-header">
+    <div class="header-inner">
+
+      <!-- ロゴ -->
+      <a href="../index.html" class="site-logo" aria-label="トップページへ">
+        <span class="site-logo__en">UMEZOME</span>
+        <span class="site-logo__ja">智学館中等教育学校 梅染め探究 PBL</span>
+      </a>
+
+      <!-- ハンバーガーボタン (モバイル用) -->
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="メニューを開閉する" aria-expanded="false"
+        aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <!-- ナビゲーションメニュー
+           ※ 現在のページを active クラスで示す -->
+      <nav class="nav-menu" id="nav-menu" role="navigation" aria-label="メインナビゲーション">
+        <a href="#" class="nav-menu__link active">活動概要</a>
+        <a href="news.html" class="nav-menu__link">ニュース</a>
+        <a href="events.html" class="nav-menu__link">イベント</a>
+        <a href="blog.html" class="nav-menu__link">ブログ</a>
+        <a href="products.html" class="nav-menu__link">製品</a>
+        <a href="achievements.html" class="nav-menu__link">実績</a>
+        <a href="documents.html" class="nav-menu__link">資料</a>
+        <a href="../index.html#contact" class="nav-cta nav-menu__link">お問い合わせ</a>
+      </nav>
+
+    </div>
+  </header>
+
+  <!-- ================================================================
+       メインコンテンツ
+  ================================================================ -->
+  <main id="main-content">
+
+    <!-- ページヘッダー -->
+    <div class="page-header">
+      <div class="container">
+
+        <!-- パンくずリスト (ホームへの道筋を示す) -->
+        <nav class="breadcrumb" aria-label="パンくずリスト">
+          <a href="../index.html">ホーム</a>
+          <span class="breadcrumb__separator" aria-hidden="true">›</span>
+          <span aria-current="page">活動概要</span>
+        </nav>
+
+        <p class="section-eyebrow">About</p>
+        <h1 class="page-header__title">活動概要</h1>
+        <p class="page-header__lead">
+          偕楽園の梅の木と共に。廃棄物から生まれる、<br>
+          水戸の新たな地域の魅力創造への挑戦。
+        </p>
+
+      </div>
+    </div><!-- /page-header -->
+
+
+    <!-- ====== プロジェクト概要 ====== -->
+    <section class="section" id="overview" aria-label="プロジェクト概要">
+      <div class="container">
+
+        <!-- 2カラムレイアウト: テキスト左 + 画像右 -->
+        <div class="about__grid animate">
+
+          <!-- テキストカラム -->
+          <div class="about__text-col">
+            <p class="about__lead">
+              「もったいない」から始まった、<br>
+              梅の木との新たな関係
+            </p>
+
+            <p class="about__body">
+              水戸・偕楽園の梅の木は、毎年剪定の際に大量の枝が廃棄されています。
+              この問題に気づいた智学館中等教育学校の生徒たちは、
+              水戸ユネスコ協会の指導のもと、捨てられるはずの梅の枝を
+              天然染料として活用する「梅染め」に取り組み始めました。
+            </p>
+
+            <p class="about__body">
+              梅のチップを水と薬品で煮出した染液で染めた和紙や布は、
+              やさしいピンク〜ローズの美しい色合いを持ちます。
+              水酸化カリウム (KOH) を使うと発色がより鮮やかになることも
+              実験で発見しました。
+            </p>
+
+            <p class="about__body">
+              「世界には、もったいないがある。偕楽園にも、もったいないがある。」
+              この言葉を合言葉に、環境問題と地域活性化を同時に解決する取り組みを
+              5年以上続けています。
+            </p>
+
+            <!-- 3つの特徴カード -->
+            <div class="about__features">
+              <!-- 特徴1 -->
+              <div class="about__feature-card animate animate-delay-1">
+                <span class="about__feature-icon">🌸</span>
+                <h2 class="about__feature-title">梅染め研究</h2>
+                <p class="about__feature-desc">
+                  偕楽園の剪定枝から天然染料を抽出し、
+                  色の出方・温度・濃度を科学的に研究
+                </p>
+              </div>
+              <!-- 特徴2 -->
+              <div class="about__feature-card animate animate-delay-2">
+                <span class="about__feature-icon">🛍️</span>
+                <h2 class="about__feature-title">製品開発</h2>
+                <p class="about__feature-desc">
+                  うちわ・コインケース・和紙など、
+                  梅染め製品を企画・製作・販売
+                </p>
+              </div>
+              <!-- 特徴3 -->
+              <div class="about__feature-card animate animate-delay-3">
+                <span class="about__feature-icon">🤝</span>
+                <h2 class="about__feature-title">地域貢献</h2>
+                <p class="about__feature-desc">
+                  お祭りでのワークショップや老人ホームでの
+                  ボランティアを通じた地域交流
+                </p>
+              </div>
+            </div>
+
+          </div><!-- /テキストカラム -->
+
+          <!-- 画像カラム -->
+          <!--
+            【写真変更方法】
+              src="../../picture/ファイル名.jpg" のファイル名を書き換えてください
+          -->
+          <div class="about__image-col animate animate-delay-2">
+            <img src="../../picture/1714727376145.jpg" alt="梅染めワークショップの様子" class="about__image-main" loading="lazy">
+            <!-- 活動年数フローティングカード -->
+            <div class="about__stat-card">
+              <div class="about__stat-number">5+</div>
+              <div class="about__stat-label">年間の探究活動</div>
+            </div>
+          </div><!-- /画像カラム -->
+
+        </div><!-- /about__grid -->
+
+      </div>
+    </section><!-- /overview -->
+
+
+    <!-- ====== 活動の背景・目的 ====== -->
+    <section class="section section--alt" id="background" aria-label="背景と目的">
+      <div class="container">
+
+        <div class="section-header animate">
+          <span class="section-eyebrow">Background</span>
+          <h2 class="section-title">背景と目的</h2>
+          <p class="section-subtitle">
+            なぜ梅染めに取り組むのか。その出発点と目標を紹介します。
+          </p>
+        </div>
+
+        <!--
+          3カラムグリッドで「問題」「解決策」「目標」を並べて表示
+          【追加方法】 .card を1つコピーして内容を編集してください
+        -->
+        <div class="grid-3">
+
+          <!-- 問題 -->
+          <div class="card animate">
+            <div class="card__body">
+              <span class="card__tag">🌿 課題</span>
+              <h2 class="card__title">廃棄される梅の剪定枝</h2>
+              <p class="card__text">
+                偕楽園では毎年数百本の梅の木が剪定されますが、
+                剪定された枝の大部分は廃棄されています。
+                これは地域の貴重な資源が活用されていない「もったいない」状況です。
+              </p>
+            </div>
+          </div>
+
+          <!-- 解決策 -->
+          <div class="card animate animate-delay-1">
+            <div class="card__body">
+              <span class="card__tag">✨ 解決策</span>
+              <h2 class="card__title">梅染めによる資源活用</h2>
+              <p class="card__text">
+                梅の枝を細かく砕いてチップにし、水と水酸化カリウム(KOH)で
+                煮出すことで、美しいピンク色の天然染料が得られます。
+                この染液で和紙や布を染め、製品に生まれ変わらせます。
+              </p>
+            </div>
+          </div>
+
+          <!-- 目標 -->
+          <div class="card animate animate-delay-2">
+            <div class="card__body">
+              <span class="card__tag">🎯 目標</span>
+              <h2 class="card__title">水戸の新たな魅力創造</h2>
+              <p class="card__text">
+                梅染め製品やワークショップを通じて、
+                水戸・偕楽園の新たな魅力を創造します。
+                地域の活性化と環境問題の解決を同時に実現することが目標です。
+              </p>
+            </div>
+          </div>
+
+        </div><!-- /grid-3 -->
+
+      </div>
+    </section><!-- /background -->
+
+
+    <!-- ====== 活動の歩み (タイムライン) ====== -->
+    <section class="section" id="timeline" aria-label="活動の歩み">
+      <div class="container">
+
+        <div class="section-header animate">
+          <span class="section-eyebrow">Timeline</span>
+          <h2 class="section-title">活動の歩み</h2>
+          <p class="section-subtitle">
+            梅染め探究の5年間の記録です。
+          </p>
+        </div>
+
+        <!--
+          タイムライン
+          【追加方法】
+            1. <div class="news__item"> をコピー
+            2. <time> に年度を入力
+            3. <span class="news__item-tag"> にカテゴリを入力
+            4. <p> に内容を入力
+        -->
+        <div class="news__list animate">
+
+          <div class="news__item">
+            <time class="news__item-date">2020年</time>
+            <span class="news__item-tag">開始</span>
+            <p class="news__item-title">
+              水戸ユネスコ協会・林先生の梅染めの取り組みを知り、
+              PBL（課題解決型学習）として梅染め探究をスタート。
+              偕楽園から初めて剪定枝を受け取る。
+            </p>
+          </div>
+
+          <div class="news__item">
+            <time class="news__item-date">2021年</time>
+            <span class="news__item-tag">研究</span>
+            <p class="news__item-title">
+              染液の最適な濃度・温度・時間を探る実験を繰り返す。
+              水酸化カリウム (KOH) を加えると発色が大幅に改善されることを発見。
+              和紙への染色技術を確立。
+            </p>
+          </div>
+
+          <div class="news__item">
+            <time class="news__item-date">2022年</time>
+            <span class="news__item-tag">製品</span>
+            <p class="news__item-title">
+              梅染め和紙を使ったうちわの製品化に成功。
+              最適染色温度80℃・最適濃度などのレシピを確立。
+              小ロットでの製品製造体制を整える。
+            </p>
+          </div>
+
+          <div class="news__item">
+            <time class="news__item-date">2023年</time>
+            <span class="news__item-tag">展開</span>
+            <p class="news__item-title">
+              水戸黄門まつり・水戸まちなかフェスティバルへの初出展。
+              うちわのほかコインケース（端材の和紙を再利用）の販売を開始。
+              PBL Day で前期・後期の2回発表。ボランティア・スピリット・アワードへ応募。
+            </p>
+          </div>
+
+          <div class="news__item">
+            <time class="news__item-date">2024年</time>
+            <span class="news__item-tag">発展</span>
+            <p class="news__item-title">
+              第16回ユネスコスクール全国大会にて発表。
+              老人ホームでの梅染めボランティアを実施。
+              メンバーが22名に拡大。偕楽園 梅染めアドバイザーとして継続活動中。
+            </p>
+          </div>
+
+          <div class="news__item">
+            <time class="news__item-date">今後</time>
+            <span class="news__item-tag">展望</span>
+            <p class="news__item-title">
+              梅以外の廃棄物を活用した新製品の研究。
+              ワークショップの更なる改良と参加者数の拡大。
+              梅染め文化の全国・国際的な発信を目指す。
+            </p>
+          </div>
+
+        </div><!-- /news__list (timeline) -->
+
+      </div>
+    </section><!-- /timeline -->
+
+
+    <!-- ====== 梅染めのプロセス ====== -->
+    <section class="section section--alt" id="process" aria-label="梅染めのプロセス">
+      <div class="container">
+
+        <div class="section-header animate">
+          <span class="section-eyebrow">Process</span>
+          <h2 class="section-title">梅染めのプロセス</h2>
+          <p class="section-subtitle">
+            偕楽園の枝から製品完成まで、すべて生徒の手で行っています。
+          </p>
+        </div>
+
+        <!--
+          製造工程ステップ
+          【追加・変更方法】
+            .process-step を1つコピーして内容を書き換えてください
+        -->
+        <div class="process-steps">
+
+          <!-- ステップ1 -->
+          <div class="process-step animate">
+            <div class="process-step__number">1</div>
+            <h3 class="process-step__title">枝の収集</h3>
+            <p class="process-step__desc">
+              偕楽園で毎年剪定される梅の枝を受け取ります。
+              細かく砕いてチップ状に加工します。
+            </p>
+          </div>
+
+          <!-- ステップ2 -->
+          <div class="process-step animate animate-delay-1">
+            <div class="process-step__number">2</div>
+            <h3 class="process-step__title">染液の抽出</h3>
+            <p class="process-step__desc">
+              チップを水に浸し、水酸化カリウム (KOH) を加えて
+              80℃で煮出します。ピンク色の染液が完成します。
+            </p>
+          </div>
+
+          <!-- ステップ3 -->
+          <div class="process-step animate animate-delay-2">
+            <div class="process-step__number">3</div>
+            <h3 class="process-step__title">和紙の染色</h3>
+            <p class="process-step__desc">
+              温度と時間を管理しながら和紙を染めます。
+              色の濃さは煮る時間で細かく調整します。
+            </p>
+          </div>
+
+          <!-- ステップ4 -->
+          <div class="process-step animate animate-delay-3">
+            <div class="process-step__number">4</div>
+            <h3 class="process-step__title">製品完成</h3>
+            <p class="process-step__desc">
+              乾燥させた和紙をうちわやコインケースに加工。
+              端材もコインケース素材として再利用します。
+            </p>
+          </div>
+
+        </div><!-- /process-steps -->
+
+      </div>
+    </section><!-- /process -->
+
+
+    <!-- ====== よくある質問 (FAQ) ====== -->
+    <section class="section" id="faq" aria-label="よくある質問">
+      <div class="container container--sm">
+
+        <div class="section-header animate">
+          <span class="section-eyebrow">FAQ</span>
+          <h2 class="section-title">よくある質問</h2>
+        </div>
+
+        <!--
+          よくある質問
+          【追加方法】
+            1. <details class="faq__item animate"> をコピー
+            2. <summary> に質問を書く
+            3. <div class="faq__answer"> に回答を書く
+        -->
+        <div class="faq" id="faq-list">
+
+          <!-- FAQ 1 -->
+          <details class="faq__item animate" open>
+            <summary class="faq__question">
+              梅染めは色落ちしますか？
+            </summary>
+            <div class="faq__answer">
+              <p>
+                天然染料のため、化学染料に比べると経年で色が変化することがあります。
+                直射日光を避けて保管することで、より長くお楽しみいただけます。
+                なお、水酸化カリウム (KOH) を使用することで発色が安定し、
+                耐光性が向上することを実験で確認しています。
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ 2 -->
+          <details class="faq__item animate animate-delay-1">
+            <summary class="faq__question">
+              ワークショップに参加するにはどうすればいいですか？
+            </summary>
+            <div class="faq__answer">
+              <p>
+                水戸市内で開催するお祭り（水戸黄門まつり・まちなかフェスティバル など）の
+                ブースで体験していただけます。次回の開催情報は「イベント」ページで
+                お知らせしています。個別のイベントへの参加ご依頼は、
+                <a href="../index.html#contact" class="text-plum">お問い合わせフォーム</a>よりご連絡ください。
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ 3 -->
+          <details class="faq__item animate animate-delay-2">
+            <summary class="faq__question">
+              梅の染料はなぜピンク色になるのですか？
+            </summary>
+            <div class="faq__answer">
+              <p>
+                梅の枝にはアントシアニン系の色素が含まれており、
+                アルカリ性（KOH水溶液）の環境でピンク色に発色します。
+                染液の pH・温度・濃度によって色合いが変わるため、
+                私たちは80℃・特定の KOH 濃度を最適条件として採用しています。
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ 4 -->
+          <details class="faq__item animate animate-delay-3">
+            <summary class="faq__question">
+              製品はどこで購入できますか？
+            </summary>
+            <div class="faq__answer">
+              <p>
+                現在はワークショップ・イベント会場での販売のみとなっています。
+                オンライン販売は検討中です。取扱いご希望の場合は、
+                <a href="../index.html#contact" class="text-plum">お問い合わせ</a>よりご連絡ください。
+              </p>
+            </div>
+          </details>
+
+          <!-- FAQ 5 -->
+          <details class="faq__item animate">
+            <summary class="faq__question">
+              取材・メディア掲載のお問い合わせはどこにすればいいですか？
+            </summary>
+            <div class="faq__answer">
+              <p>
+                <a href="../index.html#contact" class="text-plum">お問い合わせフォーム</a>より
+                「取材・メディア掲載」を選択してご連絡ください。
+                担当者よりご返信いたします。
+              </p>
+            </div>
+          </details>
+
+        </div><!-- /faq -->
+
+      </div>
+    </section><!-- /faq -->
+
+
+    <!-- ====== 関係団体・協力者 ====== -->
+    <section class="section section--alt" id="partners" aria-label="関係団体・協力者">
+      <div class="container">
+
+        <div class="section-header animate">
+          <span class="section-eyebrow">Partners</span>
+          <h2 class="section-title">関係団体・協力者</h2>
+          <p class="section-subtitle">
+            多くの皆様のご支援のもとで活動しています。
+          </p>
+        </div>
+
+        <!--
+          協力団体カード
+          【追加方法】
+            .partner-card を1つコピーして内容を編集してください
+        -->
+        <div class="grid-3 animate">
+
+          <div class="card">
+            <div class="card__body">
+              <span class="card__tag">🏛️ 連携先</span>
+              <h2 class="card__title">偕楽園</h2>
+              <p class="card__text">
+                梅の剪定枝を提供していただいています。
+                日本三名園の一つである偕楽園との連携が、
+                この活動の根幹を支えています。
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__body">
+              <span class="card__tag">🌐 指導・協力</span>
+              <h2 class="card__title">水戸ユネスコ協会</h2>
+              <p class="card__text">
+                梅染めの手法や活動の方向性についてご指導いただいています。
+                林先生をはじめとする専門家の皆様のアドバイスが
+                研究の質を高めています。
+              </p>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card__body">
+              <span class="card__tag">🏫 活動母体</span>
+              <h2 class="card__title">智学館中等教育学校</h2>
+              <p class="card__text">
+                PBL（課題解決型学習）の場として、生徒22名が主体的に
+                研究・製品開発・地域活動に取り組んでいます。
+              </p>
+            </div>
+          </div>
+
+        </div><!-- /grid-3 -->
+
+      </div>
+    </section><!-- /partners -->
+
+
+    <!-- ====== CTAセクション ====== -->
+    <section class="section" id="cta-section" aria-label="次のステップ">
+      <div class="container">
+        <div class="section-header animate">
+          <span class="section-eyebrow">Join Us</span>
+          <h2 class="section-title">梅染めの世界へ</h2>
+          <p class="section-subtitle">
+            ワークショップへの参加、製品の購入、取材など、<br>
+            お気軽にお問い合わせください。
+          </p>
+          <div class="hero__cta-group" style="margin-top: var(--space-2xl)">
+            <a href="events.html" class="btn btn--primary">イベントを見る</a>
+            <a href="../index.html#contact" class="btn btn--outline">お問い合わせ</a>
+          </div>
+        </div>
+      </div>
+    </section><!-- /cta-section -->
+
+  </main><!-- /main -->
+
+
+  <!-- ================================================================
+       フッター
+       ※ 全ページ共通。ここを変更したら他ページも揃えてください。
+  ================================================================ -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- ブランド情報 -->
+        <div class="footer-brand">
+          <div class="footer-brand__logo">UMEZOME</div>
+          <div class="footer-brand__name">智学館中等教育学校 梅染め探究 PBL</div>
+          <p class="footer-brand__desc">
+            偕楽園の剪定梅枝を活用した草木染めで、
+            水戸の新たな地域の魅力を創造しています。
+          </p>
+        </div>
+
+        <!-- サイトマップ1 -->
+        <nav class="footer-col" aria-label="活動について">
+          <h3 class="footer-col__title">活動について</h3>
+          <ul class="footer-col__links">
+            <li><a href="#" class="footer-col__link">活動概要</a></li>
+            <li><a href="news.html" class="footer-col__link">ニュース</a></li>
+            <li><a href="events.html" class="footer-col__link">イベント</a></li>
+            <li><a href="blog.html" class="footer-col__link">ブログ</a></li>
+          </ul>
+        </nav>
+
+        <!-- サイトマップ2 -->
+        <nav class="footer-col" aria-label="コンテンツ">
+          <h3 class="footer-col__title">コンテンツ</h3>
+          <ul class="footer-col__links">
+            <li><a href="products.html" class="footer-col__link">製品紹介</a></li>
+            <li><a href="achievements.html" class="footer-col__link">実績・受賞</a></li>
+            <li><a href="documents.html" class="footer-col__link">資料</a></li>
+            <li><a href="../index.html#contact" class="footer-col__link">お問い合わせ</a></li>
+          </ul>
+        </nav>
+
+        <!-- 学校情報 -->
+        <div class="footer-col">
+          <h3 class="footer-col__title">学校情報</h3>
+          <ul class="footer-col__links">
+            <li><span class="footer-col__link">智学館中等教育学校</span></li>
+            <li><span class="footer-col__link">3年次 PBL 梅染め班</span></li>
+            <li><span class="footer-col__link">水戸市 茨城県</span></li>
+          </ul>
+        </div>
+
+      </div><!-- /footer-grid -->
+
+      <!-- フッター下部 -->
+      <div class="footer-bottom">
+        <p class="footer-copyright">
+          &copy; 2024 智学館中等教育学校 PBL梅染めグループ. All rights reserved.
+        </p>
+        <nav class="footer-links" aria-label="フッターリンク">
+          <a href="#">プライバシーポリシー</a>
+          <a href="../index.html#contact">お問い合わせ</a>
+        </nav>
+      </div>
+
+    </div>
+  </footer>
+
+
+  <!-- ページトップへ戻るボタン -->
+  <button class="back-to-top" id="back-to-top" aria-label="ページトップへ戻る">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  </button>
+
+  <!-- JavaScriptの読み込み (body末尾に配置してページ表示を速くする) -->
+  <script src="../assets/js/main.js"></script>
+
+  <!-- ページ固有のJavaScript (FAQアコーディオン用スタイル確認など) -->
+  <script>
+    /**
+     * FAQ: details/summary のスタイルは style.css の .faq セクションで管理しています。
+     * 追加機能が必要な場合はここに記述してください。
+     */
+    // 現時点では HTML標準の <details> タグで動作するため、追加JSは不要です。
+  </script>
+
+</body>
+
+</html>
